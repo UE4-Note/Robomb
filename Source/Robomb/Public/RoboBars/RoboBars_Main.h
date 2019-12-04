@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
+// #include "mavlink/mavlink_types.h"
 #include "RoboBars_Main.generated.h"
 
 UCLASS()
@@ -25,5 +26,18 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+public:
+
+	bool AmericaMode, JapanMode;
+
+private:
+
+	// mavlink_message_t Message;
+
+public:
+
+	void RC_GetData();
+
 
 };

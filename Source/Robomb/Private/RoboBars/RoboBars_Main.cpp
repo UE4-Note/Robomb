@@ -3,6 +3,7 @@
 
 #include "RoboBars_Main.h"
 
+
 // Sets default values
 ARoboBars_Main::ARoboBars_Main()
 {
@@ -30,5 +31,17 @@ void ARoboBars_Main::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+}
+
+void ARoboBars_Main::RC_GetData()
+{
+	/*	
+	if (Message.msgid == MAVLINK_MSG_ID_HEARTBEAT)
+	{
+		mavlink_message_t Msg;
+		mavlink_msg_request_data_stream_pack(Message.sysid, Message.compid, &Msg, Message.sysid, Message.compid, MAV_DATA_STREAM_ALL, 2, 10);
+		return;
+	}
+	*/
 }
 
