@@ -24,7 +24,7 @@ struct ATT_POS_MOCAP : mavlink::Message {
     float x; /*< [m] X position (NED) */
     float y; /*< [m] Y position (NED) */
     float z; /*< [m] Z position (NED) */
-    std::array<float, 21> covariance; /*<  Pose covariance matrix upper right triangular (first six entries are the first ROW, next five entries are the second ROW, etc.) */
+    std::array<float, 21> covariance; /*<  Row-major representation of a pose 6x6 cross-covariance matrix upper right triangle (states: x, y, z, roll, pitch, yaw; first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first element in the array. */
 
 
     inline std::string get_name(void) const override

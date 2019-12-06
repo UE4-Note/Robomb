@@ -1,7 +1,8 @@
 #pragma once
 
-#include "Windows.h"
 #include "mavlink/common/mavlink.h"
+
+/*
 
 #ifndef __Serial_Port_H__
 #define __Serial_Port_H__
@@ -43,3 +44,4 @@ protected:
 };
 
 #endif
+*/

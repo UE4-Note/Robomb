@@ -9,7 +9,7 @@ namespace msg {
 /**
  * @brief STORAGE_INFORMATION message
  *
- * Information about a storage medium.
+ * Information about a storage medium. This message is sent in response to a request and whenever the status of the storage changes (STORAGE_STATUS).
  */
 struct STORAGE_INFORMATION : mavlink::Message {
     static constexpr msgid_t MSG_ID = 261;
@@ -22,10 +22,10 @@ struct STORAGE_INFORMATION : mavlink::Message {
     uint32_t time_boot_ms; /*< [ms] Timestamp (time since system boot). */
     uint8_t storage_id; /*<  Storage ID (1 for first, 2 for second, etc.) */
     uint8_t storage_count; /*<  Number of storage devices */
-    uint8_t status; /*<  Status of storage (0 not available, 1 unformatted, 2 formatted) */
-    float total_capacity; /*< [MiB] Total capacity. */
-    float used_capacity; /*< [MiB] Used capacity. */
-    float available_capacity; /*< [MiB] Available storage capacity. */
+    uint8_t status; /*<  Status of storage */
+    float total_capacity; /*< [MiB] Total capacity. If storage is not ready (STORAGE_STATUS_READY) value will be ignored. */
+    float used_capacity; /*< [MiB] Used capacity. If storage is not ready (STORAGE_STATUS_READY) value will be ignored. */
+    float available_capacity; /*< [MiB] Available storage capacity. If storage is not ready (STORAGE_STATUS_READY) value will be ignored. */
     float read_speed; /*< [MiB/s] Read speed. */
     float write_speed; /*< [MiB/s] Write speed. */
 

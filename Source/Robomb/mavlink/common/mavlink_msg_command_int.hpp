@@ -9,7 +9,7 @@ namespace msg {
 /**
  * @brief COMMAND_INT message
  *
- * Message encoding a command with parameters as scaled integers. Scaling depends on the actual command value.
+ * Message encoding a command with parameters as scaled integers. Scaling depends on the actual command value. The command microservice is documented at https://mavlink.io/en/services/command.html
  */
 struct COMMAND_INT : mavlink::Message {
     static constexpr msgid_t MSG_ID = 75;

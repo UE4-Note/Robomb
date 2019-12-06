@@ -13,7 +13,7 @@ namespace msg {
  */
 struct GPS_INPUT : mavlink::Message {
     static constexpr msgid_t MSG_ID = 232;
-    static constexpr size_t LENGTH = 63;
+    static constexpr size_t LENGTH = 65;
     static constexpr size_t MIN_LENGTH = 63;
     static constexpr uint8_t CRC_EXTRA = 151;
     static constexpr auto NAME = "GPS_INPUT";
@@ -37,6 +37,7 @@ struct GPS_INPUT : mavlink::Message {
     float horiz_accuracy; /*< [m] GPS horizontal accuracy */
     float vert_accuracy; /*< [m] GPS vertical accuracy */
     uint8_t satellites_visible; /*<  Number of satellites visible. */
+    uint16_t yaw; /*< [cdeg] Yaw of vehicle, zero means not available, use 36000 for north */
 
 
     inline std::string get_name(void) const override
@@ -72,6 +73,7 @@ struct GPS_INPUT : mavlink::Message {
         ss << "  horiz_accuracy: " << horiz_accuracy << std::endl;
         ss << "  vert_accuracy: " << vert_accuracy << std::endl;
         ss << "  satellites_visible: " << +satellites_visible << std::endl;
+        ss << "  yaw: " << yaw << std::endl;
 
         return ss.str();
     }
@@ -98,6 +100,7 @@ struct GPS_INPUT : mavlink::Message {
         map << gps_id;                        // offset: 60
         map << fix_type;                      // offset: 61
         map << satellites_visible;            // offset: 62
+        map << yaw;                           // offset: 63
     }
 
     inline void deserialize(mavlink::MsgMap &map) override
@@ -120,6 +123,7 @@ struct GPS_INPUT : mavlink::Message {
         map >> gps_id;                        // offset: 60
         map >> fix_type;                      // offset: 61
         map >> satellites_visible;            // offset: 62
+        map >> yaw;                           // offset: 63
     }
 };
 

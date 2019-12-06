@@ -13,7 +13,7 @@ namespace msg {
  */
 struct HIGHRES_IMU : mavlink::Message {
     static constexpr msgid_t MSG_ID = 105;
-    static constexpr size_t LENGTH = 62;
+    static constexpr size_t LENGTH = 63;
     static constexpr size_t MIN_LENGTH = 62;
     static constexpr uint8_t CRC_EXTRA = 93;
     static constexpr auto NAME = "HIGHRES_IMU";
@@ -34,6 +34,7 @@ struct HIGHRES_IMU : mavlink::Message {
     float pressure_alt; /*<  Altitude calculated from pressure */
     float temperature; /*< [degC] Temperature */
     uint16_t fields_updated; /*<  Bitmap for fields that have updated since last message, bit 0 = xacc, bit 12: temperature */
+    uint8_t id; /*<  Id. Ids are numbered from 0 and map to IMUs numbered from 1 (e.g. IMU1 will have a message with id=0) */
 
 
     inline std::string get_name(void) const override
@@ -66,6 +67,7 @@ struct HIGHRES_IMU : mavlink::Message {
         ss << "  pressure_alt: " << pressure_alt << std::endl;
         ss << "  temperature: " << temperature << std::endl;
         ss << "  fields_updated: " << fields_updated << std::endl;
+        ss << "  id: " << +id << std::endl;
 
         return ss.str();
     }
@@ -89,6 +91,7 @@ struct HIGHRES_IMU : mavlink::Message {
         map << pressure_alt;                  // offset: 52
         map << temperature;                   // offset: 56
         map << fields_updated;                // offset: 60
+        map << id;                            // offset: 62
     }
 
     inline void deserialize(mavlink::MsgMap &map) override
@@ -108,6 +111,7 @@ struct HIGHRES_IMU : mavlink::Message {
         map >> pressure_alt;                  // offset: 52
         map >> temperature;                   // offset: 56
         map >> fields_updated;                // offset: 60
+        map >> id;                            // offset: 62
     }
 };
 

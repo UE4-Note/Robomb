@@ -30,7 +30,7 @@ struct LOCAL_POSITION_NED_COV : mavlink::Message {
     float ax; /*< [m/s/s] X Acceleration */
     float ay; /*< [m/s/s] Y Acceleration */
     float az; /*< [m/s/s] Z Acceleration */
-    std::array<float, 45> covariance; /*<  Covariance matrix upper right triangular (first nine entries are the first ROW, next eight entries are the second row, etc.) */
+    std::array<float, 45> covariance; /*<  Row-major representation of position, velocity and acceleration 9x9 cross-covariance matrix upper right triangle (states: x, y, z, vx, vy, vz, ax, ay, az; first nine entries are the first ROW, next eight entries are the second row, etc.). If unknown, assign NaN value to first element in the array. */
 
 
     inline std::string get_name(void) const override

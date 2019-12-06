@@ -9,7 +9,7 @@ namespace msg {
 /**
  * @brief COMMAND_LONG message
  *
- * Send a command with up to seven parameters to the MAV
+ * Send a command with up to seven parameters to the MAV. The command microservice is documented at https://mavlink.io/en/services/command.html
  */
 struct COMMAND_LONG : mavlink::Message {
     static constexpr msgid_t MSG_ID = 76;

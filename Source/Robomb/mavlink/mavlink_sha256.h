@@ -97,7 +97,7 @@ static const uint32_t mavlink_sha256_constant_256[64] = {
     0x90befffa, 0xa4506ceb, 0xbef9a3f7, 0xc67178f2
 };
 
-MAVLINK_HELPER void mavlink_sha256_init(mavlink_sha256_ctx*m)
+MAVLINK_HELPER void mavlink_sha256_init(mavlink_sha256_ctx *m)
 {
     m->sz[0] = 0;
     m->sz[1] = 0;

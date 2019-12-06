@@ -13,5 +13,4 @@ UCLASS()
 class ROBOMB_API URobombGameInstance : public UGameInstance
 {
 	GENERATED_BODY()
-	
 };

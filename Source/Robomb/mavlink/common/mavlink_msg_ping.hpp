@@ -9,7 +9,7 @@ namespace msg {
 /**
  * @brief PING message
  *
- * A ping message either requesting or responding to a ping. This allows to measure the system latencies, including serial port, radio modem and UDP connections.
+ * A ping message either requesting or responding to a ping. This allows to measure the system latencies, including serial port, radio modem and UDP connections. The ping microservice is documented at https://mavlink.io/en/services/ping.html
  */
 struct PING : mavlink::Message {
     static constexpr msgid_t MSG_ID = 4;

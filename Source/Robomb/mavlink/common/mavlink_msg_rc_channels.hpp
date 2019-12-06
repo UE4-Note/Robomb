@@ -39,7 +39,7 @@ struct RC_CHANNELS : mavlink::Message {
     uint16_t chan16_raw; /*< [us] RC channel 16 value. */
     uint16_t chan17_raw; /*< [us] RC channel 17 value. */
     uint16_t chan18_raw; /*< [us] RC channel 18 value. */
-    uint8_t rssi; /*< [%] Receive signal strength indicator. Values: [0-100], 255: invalid/unknown. */
+    uint8_t rssi; /*<  Receive signal strength indicator in device-dependent units/scale. Values: [0-254], 255: invalid/unknown. */
 
 
     inline std::string get_name(void) const override

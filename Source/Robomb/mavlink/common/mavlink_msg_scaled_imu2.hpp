@@ -13,7 +13,7 @@ namespace msg {
  */
 struct SCALED_IMU2 : mavlink::Message {
     static constexpr msgid_t MSG_ID = 116;
-    static constexpr size_t LENGTH = 22;
+    static constexpr size_t LENGTH = 24;
     static constexpr size_t MIN_LENGTH = 22;
     static constexpr uint8_t CRC_EXTRA = 76;
     static constexpr auto NAME = "SCALED_IMU2";
@@ -26,9 +26,10 @@ struct SCALED_IMU2 : mavlink::Message {
     int16_t xgyro; /*< [mrad/s] Angular speed around X axis */
     int16_t ygyro; /*< [mrad/s] Angular speed around Y axis */
     int16_t zgyro; /*< [mrad/s] Angular speed around Z axis */
-    int16_t xmag; /*< [mT] X Magnetic field */
-    int16_t ymag; /*< [mT] Y Magnetic field */
-    int16_t zmag; /*< [mT] Z Magnetic field */
+    int16_t xmag; /*< [mgauss] X Magnetic field */
+    int16_t ymag; /*< [mgauss] Y Magnetic field */
+    int16_t zmag; /*< [mgauss] Z Magnetic field */
+    int16_t temperature; /*< [cdegC] Temperature, 0: IMU does not provide temperature values. If the IMU is at 0C it must send 1 (0.01C). */
 
 
     inline std::string get_name(void) const override
@@ -56,6 +57,7 @@ struct SCALED_IMU2 : mavlink::Message {
         ss << "  xmag: " << xmag << std::endl;
         ss << "  ymag: " << ymag << std::endl;
         ss << "  zmag: " << zmag << std::endl;
+        ss << "  temperature: " << temperature << std::endl;
 
         return ss.str();
     }
@@ -74,6 +76,7 @@ struct SCALED_IMU2 : mavlink::Message {
         map << xmag;                          // offset: 16
         map << ymag;                          // offset: 18
         map << zmag;                          // offset: 20
+        map << temperature;                   // offset: 22
     }
 
     inline void deserialize(mavlink::MsgMap &map) override
@@ -88,6 +91,7 @@ struct SCALED_IMU2 : mavlink::Message {
         map >> xmag;                          // offset: 16
         map >> ymag;                          // offset: 18
         map >> zmag;                          // offset: 20
+        map >> temperature;                   // offset: 22
     }
 };
 

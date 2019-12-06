@@ -24,7 +24,7 @@ struct ATTITUDE_QUATERNION_COV : mavlink::Message {
     float rollspeed; /*< [rad/s] Roll angular speed */
     float pitchspeed; /*< [rad/s] Pitch angular speed */
     float yawspeed; /*< [rad/s] Yaw angular speed */
-    std::array<float, 9> covariance; /*<  Attitude covariance */
+    std::array<float, 9> covariance; /*<  Row-major representation of a 3x3 attitude covariance matrix (states: roll, pitch, yaw; first three entries are the first ROW, next three entries are the second row, etc.). If unknown, assign NaN value to first element in the array. */
 
 
     inline std::string get_name(void) const override

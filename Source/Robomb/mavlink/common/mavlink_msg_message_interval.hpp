@@ -9,7 +9,7 @@ namespace msg {
 /**
  * @brief MESSAGE_INTERVAL message
  *
- * The interval between messages for a particular MAVLink message ID. This interface replaces DATA_STREAM
+ * The interval between messages for a particular MAVLink message ID. This message is the response to the MAV_CMD_GET_MESSAGE_INTERVAL command. This interface replaces DATA_STREAM.
  */
 struct MESSAGE_INTERVAL : mavlink::Message {
     static constexpr msgid_t MSG_ID = 244;

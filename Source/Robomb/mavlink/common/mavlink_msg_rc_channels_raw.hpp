@@ -20,7 +20,7 @@ struct RC_CHANNELS_RAW : mavlink::Message {
 
 
     uint32_t time_boot_ms; /*< [ms] Timestamp (time since system boot). */
-    uint8_t port; /*<  Servo output port (set of 8 outputs = 1 port). Most MAVs will just use one, but this allows for more than 8 servos. */
+    uint8_t port; /*<  Servo output port (set of 8 outputs = 1 port). Flight stacks running on Pixhawk should use: 0 = MAIN, 1 = AUX. */
     uint16_t chan1_raw; /*< [us] RC channel 1 value. */
     uint16_t chan2_raw; /*< [us] RC channel 2 value. */
     uint16_t chan3_raw; /*< [us] RC channel 3 value. */
@@ -29,7 +29,7 @@ struct RC_CHANNELS_RAW : mavlink::Message {
     uint16_t chan6_raw; /*< [us] RC channel 6 value. */
     uint16_t chan7_raw; /*< [us] RC channel 7 value. */
     uint16_t chan8_raw; /*< [us] RC channel 8 value. */
-    uint8_t rssi; /*< [%] Receive signal strength indicator. Values: [0-100], 255: invalid/unknown. */
+    uint8_t rssi; /*<  Receive signal strength indicator in device-dependent units/scale. Values: [0-254], 255: invalid/unknown. */
 
 
     inline std::string get_name(void) const override

@@ -21,11 +21,11 @@ struct SYS_STATUS : mavlink::Message {
 
     uint32_t onboard_control_sensors_present; /*<  Bitmap showing which onboard controllers and sensors are present. Value of 0: not present. Value of 1: present. */
     uint32_t onboard_control_sensors_enabled; /*<  Bitmap showing which onboard controllers and sensors are enabled:  Value of 0: not enabled. Value of 1: enabled. */
-    uint32_t onboard_control_sensors_health; /*<  Bitmap showing which onboard controllers and sensors are operational or have an error:  Value of 0: not enabled. Value of 1: enabled. */
+    uint32_t onboard_control_sensors_health; /*<  Bitmap showing which onboard controllers and sensors have an error (or are operational). Value of 0: error. Value of 1: healthy. */
     uint16_t load; /*< [d%] Maximum usage in percent of the mainloop time. Values: [0-1000] - should always be below 1000 */
-    uint16_t voltage_battery; /*< [mV] Battery voltage */
-    int16_t current_battery; /*< [cA] Battery current, -1: autopilot does not measure the current */
-    int8_t battery_remaining; /*< [%] Remaining battery energy, -1: autopilot estimate the remaining battery */
+    uint16_t voltage_battery; /*< [mV] Battery voltage, UINT16_MAX: Voltage not sent by autopilot */
+    int16_t current_battery; /*< [cA] Battery current, -1: Current not sent by autopilot */
+    int8_t battery_remaining; /*< [%] Battery energy remaining, -1: Battery remaining energy not sent by autopilot */
     uint16_t drop_rate_comm; /*< [c%] Communication drop rate, (UART, I2C, SPI, CAN), dropped packets on all links (packets that were corrupted on reception on the MAV) */
     uint16_t errors_comm; /*<  Communication errors (UART, I2C, SPI, CAN), dropped packets on all links (packets that were corrupted on reception on the MAV) */
     uint16_t errors_count1; /*<  Autopilot-specific errors */

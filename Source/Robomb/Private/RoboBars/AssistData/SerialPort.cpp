@@ -3,7 +3,7 @@
 
 #include "SerialPort.h"
 
-
+/*
 SerialPort::SerialPort()
 {
 	memset(&m_OverlappedRead, 0, sizeof(OVERLAPPED));
@@ -152,3 +152,4 @@ int SerialPort::ReadData(void *buffer, int limit)
 	}
 	return((int)dwBytesRead);
 }
+*/

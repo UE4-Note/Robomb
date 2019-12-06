@@ -9,11 +9,11 @@ namespace msg {
 /**
  * @brief RAW_IMU message
  *
- * The RAW IMU readings for the usual 9DOF sensor setup. This message should always contain the true raw values without any scaling to allow data capture and system debugging.
+ * The RAW IMU readings for a 9DOF sensor, which is identified by the id (default IMU1). This message should always contain the true raw values without any scaling to allow data capture and system debugging.
  */
 struct RAW_IMU : mavlink::Message {
     static constexpr msgid_t MSG_ID = 27;
-    static constexpr size_t LENGTH = 26;
+    static constexpr size_t LENGTH = 29;
     static constexpr size_t MIN_LENGTH = 26;
     static constexpr uint8_t CRC_EXTRA = 144;
     static constexpr auto NAME = "RAW_IMU";
@@ -29,6 +29,8 @@ struct RAW_IMU : mavlink::Message {
     int16_t xmag; /*<  X Magnetic field (raw) */
     int16_t ymag; /*<  Y Magnetic field (raw) */
     int16_t zmag; /*<  Z Magnetic field (raw) */
+    uint8_t id; /*<  Id. Ids are numbered from 0 and map to IMUs numbered from 1 (e.g. IMU1 will have a message with id=0) */
+    int16_t temperature; /*< [cdegC] Temperature, 0: IMU does not provide temperature values. If the IMU is at 0C it must send 1 (0.01C). */
 
 
     inline std::string get_name(void) const override
@@ -56,6 +58,8 @@ struct RAW_IMU : mavlink::Message {
         ss << "  xmag: " << xmag << std::endl;
         ss << "  ymag: " << ymag << std::endl;
         ss << "  zmag: " << zmag << std::endl;
+        ss << "  id: " << +id << std::endl;
+        ss << "  temperature: " << temperature << std::endl;
 
         return ss.str();
     }
@@ -74,6 +78,8 @@ struct RAW_IMU : mavlink::Message {
         map << xmag;                          // offset: 20
         map << ymag;                          // offset: 22
         map << zmag;                          // offset: 24
+        map << id;                            // offset: 26
+        map << temperature;                   // offset: 27
     }
 
     inline void deserialize(mavlink::MsgMap &map) override
@@ -88,6 +94,8 @@ struct RAW_IMU : mavlink::Message {
         map >> xmag;                          // offset: 20
         map >> ymag;                          // offset: 22
         map >> zmag;                          // offset: 24
+        map >> id;                            // offset: 26
+        map >> temperature;                   // offset: 27
     }
 };
 

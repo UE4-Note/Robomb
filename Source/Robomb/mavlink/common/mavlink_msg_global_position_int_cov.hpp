@@ -28,7 +28,7 @@ struct GLOBAL_POSITION_INT_COV : mavlink::Message {
     float vx; /*< [m/s] Ground X Speed (Latitude) */
     float vy; /*< [m/s] Ground Y Speed (Longitude) */
     float vz; /*< [m/s] Ground Z Speed (Altitude) */
-    std::array<float, 36> covariance; /*<  Covariance matrix (first six entries are the first ROW, next six entries are the second row, etc.) */
+    std::array<float, 36> covariance; /*<  Row-major representation of a 6x6 position and velocity 6x6 cross-covariance matrix (states: lat, lon, alt, vx, vy, vz; first six entries are the first ROW, next six entries are the second row, etc.). If unknown, assign NaN value to first element in the array. */
 
 
     inline std::string get_name(void) const override

@@ -9,7 +9,7 @@ namespace msg {
 /**
  * @brief AUTOPILOT_VERSION message
  *
- * Version and capability of autopilot software
+ * Version and capability of autopilot software. This should be emitted in response to a MAV_CMD_REQUEST_AUTOPILOT_CAPABILITIES command.
  */
 struct AUTOPILOT_VERSION : mavlink::Message {
     static constexpr msgid_t MSG_ID = 148;
