@@ -9,7 +9,7 @@ namespace msg {
 /**
  * @brief VISION_POSITION_ESTIMATE message
  *
- * Global position/attitude estimate from a vision source.
+ * Local position/attitude estimate from a vision source.
  */
 struct VISION_POSITION_ESTIMATE : mavlink::Message {
     static constexpr msgid_t MSG_ID = 102;
@@ -20,9 +20,9 @@ struct VISION_POSITION_ESTIMATE : mavlink::Message {
 
 
     uint64_t usec; /*< [us] Timestamp (UNIX time or time since system boot) */
-    float x; /*< [m] Global X position */
-    float y; /*< [m] Global Y position */
-    float z; /*< [m] Global Z position */
+    float x; /*< [m] Local X position */
+    float y; /*< [m] Local Y position */
+    float z; /*< [m] Local Z position */
     float roll; /*< [rad] Roll angle */
     float pitch; /*< [rad] Pitch angle */
     float yaw; /*< [rad] Yaw angle */

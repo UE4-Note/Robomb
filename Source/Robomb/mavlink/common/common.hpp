@@ -21,7 +21,7 @@ namespace common {
 /**
  * Array of msg_entry needed for @p mavlink_parse_char() (trought @p mavlink_get_msg_entry())
  */
-constexpr std::array<mavlink_msg_entry_t, 160> MESSAGE_ENTRIES {{ {0, 50, 9, 0, 0, 0}, {1, 124, 31, 0, 0, 0}, {2, 137, 12, 0, 0, 0}, {4, 237, 14, 3, 12, 13}, {5, 217, 28, 1, 0, 0}, {6, 104, 3, 0, 0, 0}, {7, 119, 32, 0, 0, 0}, {11, 89, 6, 1, 4, 0}, {20, 214, 20, 3, 2, 3}, {21, 159, 2, 3, 0, 1}, {22, 220, 25, 0, 0, 0}, {23, 168, 23, 3, 4, 5}, {24, 24, 30, 0, 0, 0}, {25, 23, 101, 0, 0, 0}, {26, 170, 22, 0, 0, 0}, {27, 144, 26, 0, 0, 0}, {28, 67, 16, 0, 0, 0}, {29, 115, 14, 0, 0, 0}, {30, 39, 28, 0, 0, 0}, {31, 246, 32, 0, 0, 0}, {32, 185, 28, 0, 0, 0}, {33, 104, 28, 0, 0, 0}, {34, 237, 22, 0, 0, 0}, {35, 244, 22, 0, 0, 0}, {36, 222, 21, 0, 0, 0}, {37, 212, 6, 3, 4, 5}, {38, 9, 6, 3, 4, 5}, {39, 254, 37, 3, 32, 33}, {40, 230, 4, 3, 2, 3}, {41, 28, 4, 3, 2, 3}, {42, 28, 2, 0, 0, 0}, {43, 132, 2, 3, 0, 1}, {44, 221, 4, 3, 2, 3}, {45, 232, 2, 3, 0, 1}, {46, 11, 2, 0, 0, 0}, {47, 153, 3, 3, 0, 1}, {48, 41, 13, 1, 12, 0}, {49, 39, 12, 0, 0, 0}, {50, 78, 37, 3, 18, 19}, {51, 196, 4, 3, 2, 3}, {54, 15, 27, 3, 24, 25}, {55, 3, 25, 0, 0, 0}, {61, 167, 72, 0, 0, 0}, {62, 183, 26, 0, 0, 0}, {63, 119, 181, 0, 0, 0}, {64, 191, 225, 0, 0, 0}, {65, 118, 42, 0, 0, 0}, {66, 148, 6, 3, 2, 3}, {67, 21, 4, 0, 0, 0}, {69, 243, 11, 1, 10, 0}, {70, 124, 18, 3, 16, 17}, {73, 38, 37, 3, 32, 33}, {74, 20, 20, 0, 0, 0}, {75, 158, 35, 3, 30, 31}, {76, 152, 33, 3, 30, 31}, {77, 143, 3, 0, 0, 0}, {81, 106, 22, 0, 0, 0}, {82, 49, 39, 3, 36, 37}, {83, 22, 37, 0, 0, 0}, {84, 143, 53, 3, 50, 51}, {85, 140, 51, 0, 0, 0}, {86, 5, 53, 3, 50, 51}, {87, 150, 51, 0, 0, 0}, {89, 231, 28, 0, 0, 0}, {90, 183, 56, 0, 0, 0}, {91, 63, 42, 0, 0, 0}, {92, 54, 33, 0, 0, 0}, {93, 47, 81, 0, 0, 0}, {100, 175, 26, 0, 0, 0}, {101, 102, 32, 0, 0, 0}, {102, 158, 32, 0, 0, 0}, {103, 208, 20, 0, 0, 0}, {104, 56, 32, 0, 0, 0}, {105, 93, 62, 0, 0, 0}, {106, 138, 44, 0, 0, 0}, {107, 108, 64, 0, 0, 0}, {108, 32, 84, 0, 0, 0}, {109, 185, 9, 0, 0, 0}, {110, 84, 254, 3, 1, 2}, {111, 34, 16, 0, 0, 0}, {112, 174, 12, 0, 0, 0}, {113, 124, 36, 0, 0, 0}, {114, 237, 44, 0, 0, 0}, {115, 4, 64, 0, 0, 0}, {116, 76, 22, 0, 0, 0}, {117, 128, 6, 3, 4, 5}, {118, 56, 14, 0, 0, 0}, {119, 116, 12, 3, 10, 11}, {120, 134, 97, 0, 0, 0}, {121, 237, 2, 3, 0, 1}, {122, 203, 2, 3, 0, 1}, {123, 250, 113, 3, 0, 1}, {124, 87, 35, 0, 0, 0}, {125, 203, 6, 0, 0, 0}, {126, 220, 79, 0, 0, 0}, {127, 25, 35, 0, 0, 0}, {128, 226, 35, 0, 0, 0}, {129, 46, 22, 0, 0, 0}, {130, 29, 13, 0, 0, 0}, {131, 223, 255, 0, 0, 0}, {132, 85, 14, 0, 0, 0}, {133, 6, 18, 0, 0, 0}, {134, 229, 43, 0, 0, 0}, {135, 203, 8, 0, 0, 0}, {136, 1, 22, 0, 0, 0}, {137, 195, 14, 0, 0, 0}, {138, 109, 36, 0, 0, 0}, {139, 168, 43, 3, 41, 42}, {140, 181, 41, 0, 0, 0}, {141, 47, 32, 0, 0, 0}, {142, 72, 243, 0, 0, 0}, {143, 131, 14, 0, 0, 0}, {144, 127, 93, 0, 0, 0}, {146, 103, 100, 0, 0, 0}, {147, 154, 36, 0, 0, 0}, {148, 178, 60, 0, 0, 0}, {149, 200, 30, 0, 0, 0}, {162, 189, 8, 0, 0, 0}, {230, 163, 42, 0, 0, 0}, {231, 105, 40, 0, 0, 0}, {232, 151, 63, 0, 0, 0}, {233, 35, 182, 0, 0, 0}, {234, 150, 40, 0, 0, 0}, {241, 90, 32, 0, 0, 0}, {242, 104, 52, 0, 0, 0}, {243, 85, 53, 1, 52, 0}, {244, 95, 6, 0, 0, 0}, {245, 130, 2, 0, 0, 0}, {246, 184, 38, 0, 0, 0}, {247, 81, 19, 0, 0, 0}, {248, 8, 254, 3, 3, 4}, {249, 204, 36, 0, 0, 0}, {250, 49, 30, 0, 0, 0}, {251, 170, 18, 0, 0, 0}, {252, 44, 18, 0, 0, 0}, {253, 83, 51, 0, 0, 0}, {254, 46, 9, 0, 0, 0}, {256, 71, 42, 3, 8, 9}, {257, 131, 9, 0, 0, 0}, {258, 187, 32, 3, 0, 1}, {259, 92, 235, 0, 0, 0}, {260, 146, 5, 0, 0, 0}, {261, 179, 27, 0, 0, 0}, {262, 12, 18, 0, 0, 0}, {263, 133, 255, 0, 0, 0}, {264, 49, 28, 0, 0, 0}, {265, 26, 16, 0, 0, 0}, {266, 193, 255, 3, 2, 3}, {267, 35, 255, 3, 2, 3}, {268, 14, 4, 3, 2, 3}, {299, 19, 96, 0, 0, 0}, {310, 28, 17, 0, 0, 0}, {311, 95, 116, 0, 0, 0}, {330, 23, 158, 0, 0, 0}, {331, 91, 230, 0, 0, 0}, {335, 225, 24, 0, 0, 0}, {350, 232, 20, 0, 0, 0}, {365, 36, 255, 0, 0, 0}, {375, 251, 140, 0, 0, 0}, {9000, 113, 137, 0, 0, 0} }};
+constexpr std::array<mavlink_msg_entry_t, 192> MESSAGE_ENTRIES {{ {0, 50, 9, 0, 0, 0}, {1, 124, 31, 0, 0, 0}, {2, 137, 12, 0, 0, 0}, {4, 237, 14, 3, 12, 13}, {5, 217, 28, 1, 0, 0}, {6, 104, 3, 0, 0, 0}, {7, 119, 32, 0, 0, 0}, {8, 117, 36, 0, 0, 0}, {11, 89, 6, 1, 4, 0}, {20, 214, 20, 3, 2, 3}, {21, 159, 2, 3, 0, 1}, {22, 220, 25, 0, 0, 0}, {23, 168, 23, 3, 4, 5}, {24, 24, 30, 0, 0, 0}, {25, 23, 101, 0, 0, 0}, {26, 170, 22, 0, 0, 0}, {27, 144, 26, 0, 0, 0}, {28, 67, 16, 0, 0, 0}, {29, 115, 14, 0, 0, 0}, {30, 39, 28, 0, 0, 0}, {31, 246, 32, 0, 0, 0}, {32, 185, 28, 0, 0, 0}, {33, 104, 28, 0, 0, 0}, {34, 237, 22, 0, 0, 0}, {35, 244, 22, 0, 0, 0}, {36, 222, 21, 0, 0, 0}, {37, 212, 6, 3, 4, 5}, {38, 9, 6, 3, 4, 5}, {39, 254, 37, 3, 32, 33}, {40, 230, 4, 3, 2, 3}, {41, 28, 4, 3, 2, 3}, {42, 28, 2, 0, 0, 0}, {43, 132, 2, 3, 0, 1}, {44, 221, 4, 3, 2, 3}, {45, 232, 2, 3, 0, 1}, {46, 11, 2, 0, 0, 0}, {47, 153, 3, 3, 0, 1}, {48, 41, 13, 1, 12, 0}, {49, 39, 12, 0, 0, 0}, {50, 78, 37, 3, 18, 19}, {51, 196, 4, 3, 2, 3}, {52, 132, 7, 0, 0, 0}, {54, 15, 27, 3, 24, 25}, {55, 3, 25, 0, 0, 0}, {61, 167, 72, 0, 0, 0}, {62, 183, 26, 0, 0, 0}, {63, 119, 181, 0, 0, 0}, {64, 191, 225, 0, 0, 0}, {65, 118, 42, 0, 0, 0}, {66, 148, 6, 3, 2, 3}, {67, 21, 4, 0, 0, 0}, {69, 243, 11, 1, 10, 0}, {70, 124, 18, 3, 16, 17}, {73, 38, 37, 3, 32, 33}, {74, 20, 20, 0, 0, 0}, {75, 158, 35, 3, 30, 31}, {76, 152, 33, 3, 30, 31}, {77, 143, 3, 3, 8, 9}, {81, 106, 22, 0, 0, 0}, {82, 49, 39, 3, 36, 37}, {83, 22, 37, 0, 0, 0}, {84, 143, 53, 3, 50, 51}, {85, 140, 51, 0, 0, 0}, {86, 5, 53, 3, 50, 51}, {87, 150, 51, 0, 0, 0}, {89, 231, 28, 0, 0, 0}, {90, 183, 56, 0, 0, 0}, {91, 63, 42, 0, 0, 0}, {92, 54, 33, 0, 0, 0}, {93, 47, 81, 0, 0, 0}, {100, 175, 26, 0, 0, 0}, {101, 102, 32, 0, 0, 0}, {102, 158, 32, 0, 0, 0}, {103, 208, 20, 0, 0, 0}, {104, 56, 32, 0, 0, 0}, {105, 93, 62, 0, 0, 0}, {106, 138, 44, 0, 0, 0}, {107, 108, 64, 0, 0, 0}, {108, 32, 84, 0, 0, 0}, {109, 185, 9, 0, 0, 0}, {110, 84, 254, 3, 1, 2}, {111, 34, 16, 0, 0, 0}, {112, 174, 12, 0, 0, 0}, {113, 124, 36, 0, 0, 0}, {114, 237, 44, 0, 0, 0}, {115, 4, 64, 0, 0, 0}, {116, 76, 22, 0, 0, 0}, {117, 128, 6, 3, 4, 5}, {118, 56, 14, 0, 0, 0}, {119, 116, 12, 3, 10, 11}, {120, 134, 97, 0, 0, 0}, {121, 237, 2, 3, 0, 1}, {122, 203, 2, 3, 0, 1}, {123, 250, 113, 3, 0, 1}, {124, 87, 35, 0, 0, 0}, {125, 203, 6, 0, 0, 0}, {126, 220, 79, 0, 0, 0}, {127, 25, 35, 0, 0, 0}, {128, 226, 35, 0, 0, 0}, {129, 46, 22, 0, 0, 0}, {130, 29, 13, 0, 0, 0}, {131, 223, 255, 0, 0, 0}, {132, 85, 14, 0, 0, 0}, {133, 6, 18, 0, 0, 0}, {134, 229, 43, 0, 0, 0}, {135, 203, 8, 0, 0, 0}, {136, 1, 22, 0, 0, 0}, {137, 195, 14, 0, 0, 0}, {138, 109, 36, 0, 0, 0}, {139, 168, 43, 3, 41, 42}, {140, 181, 41, 0, 0, 0}, {141, 47, 32, 0, 0, 0}, {142, 72, 243, 0, 0, 0}, {143, 131, 14, 0, 0, 0}, {144, 127, 93, 0, 0, 0}, {146, 103, 100, 0, 0, 0}, {147, 154, 36, 0, 0, 0}, {148, 178, 60, 0, 0, 0}, {149, 200, 30, 0, 0, 0}, {162, 189, 8, 0, 0, 0}, {230, 163, 42, 0, 0, 0}, {231, 105, 40, 0, 0, 0}, {232, 151, 63, 0, 0, 0}, {233, 35, 182, 0, 0, 0}, {234, 150, 40, 0, 0, 0}, {235, 179, 42, 0, 0, 0}, {241, 90, 32, 0, 0, 0}, {242, 104, 52, 0, 0, 0}, {243, 85, 53, 1, 52, 0}, {244, 95, 6, 0, 0, 0}, {245, 130, 2, 0, 0, 0}, {246, 184, 38, 0, 0, 0}, {247, 81, 19, 0, 0, 0}, {248, 8, 254, 3, 3, 4}, {249, 204, 36, 0, 0, 0}, {250, 49, 30, 0, 0, 0}, {251, 170, 18, 0, 0, 0}, {252, 44, 18, 0, 0, 0}, {253, 83, 51, 0, 0, 0}, {254, 46, 9, 0, 0, 0}, {256, 71, 42, 3, 8, 9}, {257, 131, 9, 0, 0, 0}, {258, 187, 32, 3, 0, 1}, {259, 92, 235, 0, 0, 0}, {260, 146, 5, 0, 0, 0}, {261, 179, 27, 0, 0, 0}, {262, 12, 18, 0, 0, 0}, {263, 133, 255, 0, 0, 0}, {264, 49, 28, 0, 0, 0}, {265, 26, 16, 0, 0, 0}, {266, 193, 255, 3, 2, 3}, {267, 35, 255, 3, 2, 3}, {268, 14, 4, 3, 2, 3}, {269, 109, 213, 0, 0, 0}, {270, 59, 19, 0, 0, 0}, {299, 19, 96, 0, 0, 0}, {300, 217, 22, 0, 0, 0}, {301, 243, 58, 0, 0, 0}, {310, 28, 17, 0, 0, 0}, {311, 95, 116, 0, 0, 0}, {320, 243, 20, 3, 2, 3}, {321, 88, 2, 3, 0, 1}, {322, 243, 149, 0, 0, 0}, {323, 78, 147, 3, 0, 1}, {324, 132, 146, 0, 0, 0}, {330, 23, 158, 0, 0, 0}, {331, 91, 230, 0, 0, 0}, {332, 236, 239, 0, 0, 0}, {333, 231, 109, 0, 0, 0}, {334, 135, 14, 0, 0, 0}, {335, 225, 24, 0, 0, 0}, {340, 99, 70, 0, 0, 0}, {350, 232, 20, 0, 0, 0}, {360, 11, 25, 0, 0, 0}, {365, 36, 255, 0, 0, 0}, {370, 98, 73, 0, 0, 0}, {371, 161, 50, 0, 0, 0}, {375, 251, 140, 0, 0, 0}, {380, 232, 20, 0, 0, 0}, {385, 147, 133, 3, 2, 3}, {390, 156, 238, 0, 0, 0}, {395, 231, 222, 0, 0, 0}, {400, 110, 254, 3, 4, 5}, {401, 183, 6, 3, 4, 5}, {9000, 113, 137, 0, 0, 0}, {12900, 197, 22, 0, 0, 0}, {12901, 16, 37, 0, 0, 0}, {12902, 181, 31, 0, 0, 0}, {12903, 149, 24, 0, 0, 0}, {12904, 238, 21, 0, 0, 0}, {12905, 56, 21, 0, 0, 0}, {12915, 67, 252, 0, 0, 0} }};
 
 //! MAVLINK VERSION
 constexpr auto MAVLINK_VERSION = 3;
@@ -113,6 +113,28 @@ enum class FIRMWARE_VERSION_TYPE
 //! FIRMWARE_VERSION_TYPE ENUM_END
 constexpr auto FIRMWARE_VERSION_TYPE_ENUM_END = 256;
 
+/** @brief Flags to report failure cases over the high latency telemtry. */
+enum class HL_FAILURE_FLAG : uint16_t
+{
+    GPS=1, /* GPS failure. | */
+    DIFFERENTIAL_PRESSURE=2, /* Differential pressure sensor failure. | */
+    ABSOLUTE_PRESSURE=4, /* Absolute pressure sensor failure. | */
+    FLAG_3D_ACCEL=8, /* Accelerometer sensor failure. | */
+    FLAG_3D_GYRO=16, /* Gyroscope sensor failure. | */
+    FLAG_3D_MAG=32, /* Magnetometer sensor failure. | */
+    TERRAIN=64, /* Terrain subsystem failure. | */
+    BATTERY=128, /* Battery failure/critical low battery. | */
+    RC_RECEIVER=256, /* RC receiver failure/no rc connection. | */
+    OFFBOARD_LINK=512, /* Offboard link failure. | */
+    ENGINE=1024, /* Engine failure. | */
+    GEOFENCE=2048, /* Geofence violation. | */
+    ESTIMATOR=4096, /* Estimator failure, for example measurement rejection or large variances. | */
+    MISSION=8192, /* Mission failure. | */
+};
+
+//! HL_FAILURE_FLAG ENUM_END
+constexpr auto HL_FAILURE_FLAG_ENUM_END = 8193;
+
 /** @brief These flags encode the MAV mode. */
 enum class MAV_MODE_FLAG : uint8_t
 {
@@ -197,9 +219,9 @@ constexpr auto MAV_STATE_ENUM_END = 9;
 /** @brief Component ids (values) for the different types and instances of onboard hardware/software that might make up a MAVLink system (autopilot, cameras, servos, GPS systems, avoidance systems etc.).
       Components must use the appropriate ID in their source address when sending messages. Components can also use IDs to determine if they are the intended recipient of an incoming message. The MAV_COMP_ID_ALL value is used to indicate messages that must be processed by all components.
       When creating new entries, components that can have multiple instances (e.g. cameras, servos etc.) should be allocated sequential values. An appropriate number of values should be left free after these components to allow the number of instances to be expanded. */
-enum class MAV_COMPONENT
+enum class MAV_COMPONENT : uint8_t
 {
-    COMP_ID_ALL=0, /* Used to broadcast messages to all components of the receiving system. Components should attempt to process messages with this component ID and forward to components on any other interfaces. | */
+    COMP_ID_ALL=0, /* Target id (target_component) used to broadcast messages to all components of the receiving system. Components should attempt to process messages with this component ID and forward to components on any other interfaces. Note: This is not a valid *source* component id for a message. | */
     COMP_ID_AUTOPILOT1=1, /* System flight controller component ("autopilot"). Only one autopilot is expected in a particular system. | */
     COMP_ID_USER1=25, /* Id for a component on privately managed MAVLink network. Can be used for any purpose but may not be published by components outside of the private network. | */
     COMP_ID_USER2=26, /* Id for a component on privately managed MAVLink network. Can be used for any purpose but may not be published by components outside of the private network. | */
@@ -319,6 +341,7 @@ enum class MAV_COMPONENT
     COMP_ID_GPS2=221, /* GPS #2. | */
     COMP_ID_UDP_BRIDGE=240, /* Component to bridge MAVLink to UDP (i.e. from a UART). | */
     COMP_ID_UART_BRIDGE=241, /* Component to bridge to UART (i.e. from UDP). | */
+    COMP_ID_TUNNEL_NODE=242, /* Component handling TUNNEL messages (e.g. vendor specific GUI of a component). | */
     COMP_ID_SYSTEM_CONTROL=250, /* Component for handling system messages (e.g. to ARM, takeoff, etc.). | */
 };
 
@@ -430,6 +453,17 @@ enum class FENCE_BREACH : uint8_t
 //! FENCE_BREACH ENUM_END
 constexpr auto FENCE_BREACH_ENUM_END = 4;
 
+/** @brief Actions being taken to mitigate/prevent fence breach */
+enum class FENCE_MITIGATE : uint8_t
+{
+    UNKNOWN=0, /* Unknown | */
+    NONE=1, /* No actions being taken | */
+    VEL_LIMIT=2, /* Velocity limiting active to prevent breach | */
+};
+
+//! FENCE_MITIGATE ENUM_END
+constexpr auto FENCE_MITIGATE_ENUM_END = 3;
+
 /** @brief Enumeration of possible mount operation modes */
 enum class MAV_MOUNT_MODE
 {
@@ -438,11 +472,10 @@ enum class MAV_MOUNT_MODE
     MAVLINK_TARGETING=2, /* Load neutral position and start MAVLink Roll,Pitch,Yaw control with stabilization | */
     RC_TARGETING=3, /* Load neutral position and start RC Roll,Pitch,Yaw control with stabilization | */
     GPS_POINT=4, /* Load neutral position and start to point to Lat,Lon,Alt | */
-    SYSID_TARGET=5, /* Follow system ID | */
 };
 
 //! MAV_MOUNT_MODE ENUM_END
-constexpr auto MAV_MOUNT_MODE_ENUM_END = 6;
+constexpr auto MAV_MOUNT_MODE_ENUM_END = 5;
 
 /** @brief Generalized UAVCAN node health */
 enum class UAVCAN_NODE_HEALTH : uint8_t
@@ -481,6 +514,19 @@ enum class STORAGE_STATUS : uint8_t
 //! STORAGE_STATUS ENUM_END
 constexpr auto STORAGE_STATUS_ENUM_END = 4;
 
+/** @brief Yaw behaviour during orbit flight. */
+enum class ORBIT_YAW_BEHAVIOUR
+{
+    HOLD_FRONT_TO_CIRCLE_CENTER=0, /* Vehicle front points to the center (default). | */
+    HOLD_INITIAL_HEADING=1, /* Vehicle front holds heading when message received. | */
+    UNCONTROLLED=2, /* Yaw uncontrolled. | */
+    HOLD_FRONT_TANGENT_TO_CIRCLE=3, /* Vehicle front follows flight path (tangential to circle). | */
+    RC_CONTROLLED=4, /* Yaw controlled by RC input. | */
+};
+
+//! ORBIT_YAW_BEHAVIOUR ENUM_END
+constexpr auto ORBIT_YAW_BEHAVIOUR_ENUM_END = 5;
+
 /** @brief Commands to be executed by the MAV. They can be executed on user request, or as part of a mission script. If the action is used in a mission, the parameter mapping to the waypoint/mission message is as follows: Param 1, Param 2, Param 3, Param 4, X: Param 5, Y:Param 6, Z:Param 7. This command list is similar what ARINC 424 is for commercial aircraft: A data format how to interpret waypoint/mission data. See https://mavlink.io/en/guide/xml_schema.html#MAV_CMD for information about the structure of the MAV_CMD entries */
 enum class MAV_CMD : uint16_t
 {
@@ -498,6 +544,7 @@ enum class MAV_CMD : uint16_t
     NAV_LOITER_TO_ALT=31, /* Begin loiter at the specified Latitude and Longitude.  If Lat=Lon=0, then loiter at the current position.  Don't consider the navigation command complete (don't leave loiter) until the altitude has been reached.  Additionally, if the Heading Required parameter is non-zero the  aircraft will not leave the loiter until heading toward the next waypoint. |Heading Required (0 = False)| Radius. If positive loiter clockwise, negative counter-clockwise, 0 means no change to standard loiter.| Empty| Forward moving aircraft this sets exit xtrack location: 0 for center of loiter wp, 1 for exit location| Latitude| Longitude| Altitude|  */
     DO_FOLLOW=32, /* Begin following a target |System ID (of the FOLLOW_TARGET beacon). Send 0 to disable follow-me and return to the default position hold mode.| RESERVED| RESERVED| Altitude mode: 0: Keep current altitude, 1: keep altitude difference to target, 2: go to a fixed altitude above home.| Altitude above home. (used if mode=2)| RESERVED| Time to land in which the MAV should go to the default position hold mode after a message RX timeout.|  */
     DO_FOLLOW_REPOSITION=33, /* Reposition the MAV after a follow target command has been sent |Camera q1 (where 0 is on the ray from the camera to the tracking device)| Camera q2| Camera q3| Camera q4| altitude offset from target| X offset from target| Y offset from target|  */
+    DO_ORBIT=34, /* Start orbiting on the circumference of a circle defined by the parameters. Setting any value NaN results in using defaults. |Radius of the circle. positive: Orbit clockwise. negative: Orbit counter-clockwise.| Tangential Velocity. NaN: Vehicle configuration default.| Yaw behavior of the vehicle.| Reserved (e.g. for dynamic center beacon options)| Center point latitude (if no MAV_FRAME specified) / X coordinate according to MAV_FRAME. NaN: Use current vehicle position or current center if already orbiting.| Center point longitude (if no MAV_FRAME specified) / Y coordinate according to MAV_FRAME. NaN: Use current vehicle position or current center if already orbiting.| Center point altitude (MSL) (if no MAV_FRAME specified) / Z coordinate according to MAV_FRAME. NaN: Use current vehicle position or current center if already orbiting.|  */
     NAV_ROI=80, /* Sets the region of interest (ROI) for a sensor set or the vehicle itself. This can then be used by the vehicles control system to control the vehicle attitude and the attitude of various sensors such as cameras. |Region of interest mode.| Waypoint index/ target ID. (see MAV_ROI enum)| ROI index (allows a vehicle to manage multiple ROI's)| Empty| x the location of the fixed ROI (see MAV_FRAME)| y| z|  */
     NAV_PATHPLANNING=81, /* Control autonomous path planning on the MAV. |0: Disable local obstacle avoidance / local path planning (without resetting map), 1: Enable local path planning, 2: Enable and reset local path planning| 0: Disable full path planning (without resetting map), 1: Enable, 2: Enable and reset map/occupancy grid, 3: Enable and reset planned route, but not occupancy grid| Empty| Yaw angle at goal| Latitude/X of goal| Longitude/Y of goal| Altitude/Z of goal|  */
     NAV_SPLINE_WAYPOINT=82, /* Navigate to waypoint using a spline path. |Hold time. (ignored by fixed wing, time to stay at waypoint for rotary wing)| Empty| Empty| Empty| Latitude/X of goal| Longitude/Y of goal| Altitude/Z of goal|  */
@@ -526,19 +573,18 @@ enum class MAV_CMD : uint16_t
     DO_LAND_START=189, /* Mission command to perform a landing. This is used as a marker in a mission to tell the autopilot where a sequence of mission items that represents a landing starts. It may also be sent via a COMMAND_LONG to trigger a landing, in which case the nearest (geographically) landing sequence in the mission will be used. The Latitude/Longitude is optional, and may be set to 0 if not needed. If specified then it will be used to help find the closest landing sequence. |Empty| Empty| Empty| Empty| Latitude| Longitude| Empty|  */
     DO_RALLY_LAND=190, /* Mission command to perform a landing from a rally point. |Break altitude| Landing speed| Empty| Empty| Empty| Empty| Empty|  */
     DO_GO_AROUND=191, /* Mission command to safely abort an autonomous landing. |Altitude| Empty| Empty| Empty| Empty| Empty| Empty|  */
-    DO_REPOSITION=192, /* Reposition the vehicle to a specific WGS84 global position. |Ground speed, less than 0 (-1) for default| Bitmask of option flags.| Reserved| Yaw heading, NaN for unchanged. For planes indicates loiter direction (0: clockwise, 1: counter clockwise)| Latitude (deg * 1E7)| Longitude (deg * 1E7)| Altitude (meters)|  */
+    DO_REPOSITION=192, /* Reposition the vehicle to a specific WGS84 global position. |Ground speed, less than 0 (-1) for default| Bitmask of option flags.| Reserved| Yaw heading, NaN for unchanged. For planes indicates loiter direction (0: clockwise, 1: counter clockwise)| Latitude| Longitude| Altitude (meters)|  */
     DO_PAUSE_CONTINUE=193, /* If in a GPS controlled position mode, hold the current position or continue. |0: Pause current mission or reposition command, hold current position. 1: Continue mission. A VTOL capable vehicle should enter hover mode (multicopter and VTOL planes). A plane should loiter with the default loiter radius.| Reserved| Reserved| Reserved| Reserved| Reserved| Reserved|  */
     DO_SET_REVERSE=194, /* Set moving direction to forward or reverse. |Direction (0=Forward, 1=Reverse)| Empty| Empty| Empty| Empty| Empty| Empty|  */
     DO_SET_ROI_LOCATION=195, /* Sets the region of interest (ROI) to a location. This can then be used by the vehicles control system to control the vehicle attitude and the attitude of various sensors such as cameras. |Empty| Empty| Empty| Empty| Latitude| Longitude| Altitude|  */
     DO_SET_ROI_WPNEXT_OFFSET=196, /* Sets the region of interest (ROI) to be toward next waypoint, with optional pitch/roll/yaw offset. This can then be used by the vehicles control system to control the vehicle attitude and the attitude of various sensors such as cameras. |Empty| Empty| Empty| Empty| pitch offset from next waypoint| roll offset from next waypoint| yaw offset from next waypoint|  */
     DO_SET_ROI_NONE=197, /* Cancels any previous ROI command returning the vehicle/sensors to default flight characteristics. This can then be used by the vehicles control system to control the vehicle attitude and the attitude of various sensors such as cameras. |Empty| Empty| Empty| Empty| Empty| Empty| Empty|  */
-    DO_SET_ROI_SYSID=198, /* Camera ROI is vehicle with specified SysID. |sysid| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
     DO_CONTROL_VIDEO=200, /* Control onboard camera system. |Camera ID (-1 for all)| Transmission: 0: disabled, 1: enabled compressed, 2: enabled raw| Transmission mode: 0: video stream, >0: single images every n seconds| Recording: 0: disabled, 1: enabled compressed, 2: enabled raw| Empty| Empty| Empty|  */
-    DO_SET_ROI=201, /* Sets the region of interest (ROI) for a sensor set or the vehicle itself. This can then be used by the vehicles control system to control the vehicle attitude and the attitude of various sensors such as cameras. |Region of interest mode.| Waypoint index/ target ID (depends on param 1).| Region of interest index. (allows a vehicle to manage multiple ROI's)| Empty| x the location of the fixed ROI (see MAV_FRAME)| y| z|  */
+    DO_SET_ROI=201, /* Sets the region of interest (ROI) for a sensor set or the vehicle itself. This can then be used by the vehicles control system to control the vehicle attitude and the attitude of various sensors such as cameras. |Region of interest mode.| Waypoint index/ target ID (depends on param 1).| Region of interest index. (allows a vehicle to manage multiple ROI's)| Empty| MAV_ROI_WPNEXT: pitch offset from next waypoint, MAV_ROI_LOCATION: latitude| MAV_ROI_WPNEXT: roll offset from next waypoint, MAV_ROI_LOCATION: longitude| MAV_ROI_WPNEXT: yaw offset from next waypoint, MAV_ROI_LOCATION: altitude|  */
     DO_DIGICAM_CONFIGURE=202, /* Configure digital camera. This is a fallback message for systems that have not yet implemented PARAM_EXT_XXX messages and camera definition files (see https://mavlink.io/en/services/camera_def.html ). |Modes: P, TV, AV, M, Etc.| Shutter speed: Divisor number for one second.| Aperture: F stop number.| ISO number e.g. 80, 100, 200, Etc.| Exposure type enumerator.| Command Identity.| Main engine cut-off time before camera trigger. (0 means no cut-off)|  */
     DO_DIGICAM_CONTROL=203, /* Control digital camera. This is a fallback message for systems that have not yet implemented PARAM_EXT_XXX messages and camera definition files (see https://mavlink.io/en/services/camera_def.html ). |Session control e.g. show/hide lens| Zoom's absolute position| Zooming step value to offset zoom from the current position| Focus Locking, Unlocking or Re-locking| Shooting Command| Command Identity| Test shot identifier. If set to 1, image will only be captured, but not counted towards internal frame count.|  */
-    DO_MOUNT_CONFIGURE=204, /* Mission command to configure a camera or antenna mount |Mount operation mode| stabilize roll? (1 = yes, 0 = no)| stabilize pitch? (1 = yes, 0 = no)| stabilize yaw? (1 = yes, 0 = no)| Empty| Empty| Empty|  */
-    DO_MOUNT_CONTROL=205, /* Mission command to control a camera or antenna mount |pitch (WIP: DEPRECATED: or lat in degrees) depending on mount mode.| roll (WIP: DEPRECATED: or lon in degrees) depending on mount mode.| yaw (WIP: DEPRECATED: or alt in meters) depending on mount mode.| WIP: alt in meters depending on mount mode.| WIP: latitude in degrees * 1E7, set if appropriate mount mode.| WIP: longitude in degrees * 1E7, set if appropriate mount mode.| Mount mode.|  */
+    DO_MOUNT_CONFIGURE=204, /* Mission command to configure a camera or antenna mount |Mount operation mode| stabilize roll? (1 = yes, 0 = no)| stabilize pitch? (1 = yes, 0 = no)| stabilize yaw? (1 = yes, 0 = no)| roll input (0 = angle body frame, 1 = angular rate, 2 = angle absolute frame)| pitch input (0 = angle body frame, 1 = angular rate, 2 = angle absolute frame)| yaw input (0 = angle body frame, 1 = angular rate, 2 = angle absolute frame)|  */
+    DO_MOUNT_CONTROL=205, /* Mission command to control a camera or antenna mount |pitch depending on mount mode (degrees or degrees/second depending on pitch input).| roll depending on mount mode (degrees or degrees/second depending on roll input).| yaw depending on mount mode (degrees or degrees/second depending on yaw input).| altitude depending on mount mode.| latitude, set if appropriate mount mode.| longitude, set if appropriate mount mode.| Mount mode.|  */
     DO_SET_CAM_TRIGG_DIST=206, /* Mission command to set camera trigger distance for this flight. The camera is triggered each time this distance is exceeded. This command can also be used to set the shutter integration time for the camera. |Camera trigger distance. 0 to stop triggering.| Camera shutter integration time. -1 or 0 to ignore| Trigger camera once immediately. (0 = no trigger, 1 = trigger)| Empty| Empty| Empty| Empty|  */
     DO_FENCE_ENABLE=207, /* Mission command to enable the geofence |enable? (0=disable, 1=enable, 2=disable_floor_only)| Empty| Empty| Empty| Empty| Empty| Empty|  */
     DO_PARACHUTE=208, /* Mission command to trigger a parachute |action| Empty| Empty| Empty| Empty| Empty| Empty|  */
@@ -560,11 +606,13 @@ enum class MAV_CMD : uint16_t
     OVERRIDE_GOTO=252, /* Override current mission with command to pause mission, pause mission and move to position, continue/resume mission. When param 1 indicates that the mission is paused (MAV_GOTO_DO_HOLD), param 2 defines whether it holds in place or moves to another position. |MAV_GOTO_DO_HOLD: pause mission and either hold or move to specified position (depending on param2), MAV_GOTO_DO_CONTINUE: resume mission.| MAV_GOTO_HOLD_AT_CURRENT_POSITION: hold at current position, MAV_GOTO_HOLD_AT_SPECIFIED_POSITION: hold at specified position.| Coordinate frame of hold point.| Desired yaw angle.| Latitude / X position.| Longitude / Y position.| Altitude / Z position.|  */
     MISSION_START=300, /* start running a mission |first_item: the first mission item to run| last_item:  the last mission item to run (after this item is run, the mission ends)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
     COMPONENT_ARM_DISARM=400, /* Arms / Disarms a component |0: disarm, 1: arm| 0: arm-disarm unless prevented by safety checks (i.e. when landed), 21196: force arming/disarming (e.g. allow arming to override preflight checks and disarming in flight)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    ILLUMINATOR_ON_OFF=405, /* Turns illuminators ON/OFF. An illuminator is a light source that is used for lighting up dark areas external to the sytstem: e.g. a torch or searchlight (as opposed to a light source for illuminating the system itself, e.g. an indicator light). |0: Illuminators OFF, 1: Illuminators ON| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
     GET_HOME_POSITION=410, /* Request the home position from the vehicle. |Reserved| Reserved| Reserved| Reserved| Reserved| Reserved| Reserved|  */
     START_RX_PAIR=500, /* Starts receiver pairing. |0:Spektrum.| RC type.| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
     GET_MESSAGE_INTERVAL=510, /* Request the interval between messages for a particular MAVLink message ID. The receiver should ACK the command and then emit its response in a MESSAGE_INTERVAL message. |The MAVLink message ID| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
-    SET_MESSAGE_INTERVAL=511, /* Set the interval between messages for a particular MAVLink message ID. This interface replaces REQUEST_DATA_STREAM. |The MAVLink message ID| The interval between two messages. Set to -1 to disable and 0 to request default rate.| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
-    REQUEST_MESSAGE=512, /* Request the target system(s) emit a single instance of a specified message (i.e. a "one-shot" version of MAV_CMD_SET_MESSAGE_INTERVAL). |The MAVLink message ID of the requested message.| Index id (if appropriate). The use of this parameter (if any), must be defined in the requested message.| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    SET_MESSAGE_INTERVAL=511, /* Set the interval between messages for a particular MAVLink message ID. This interface replaces REQUEST_DATA_STREAM. |The MAVLink message ID| The interval between two messages. Set to -1 to disable and 0 to request default rate.| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Target address of message stream (if message has target address fields). 0: Flight-stack default (recommended), 1: address of requestor, 2: broadcast.|  */
+    REQUEST_MESSAGE=512, /* Request the target system(s) emit a single instance of a specified message (i.e. a "one-shot" version of MAV_CMD_SET_MESSAGE_INTERVAL). |The MAVLink message ID of the requested message.| Index id (if appropriate). The use of this parameter (if any), must be defined in the requested message.| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Target address for requested message (if message has target address fields). 0: Flight-stack default, 1: address of requestor, 2: broadcast.|  */
+    REQUEST_PROTOCOL_VERSION=519, /* Request MAVLink protocol version compatibility |1: Request supported protocol versions by all nodes on the network| Reserved (all remaining params)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
     REQUEST_AUTOPILOT_CAPABILITIES=520, /* Request autopilot capabilities. The receiver should ACK the command and then emit its capabilities in an AUTOPILOT_VERSION message |1: Request autopilot version| Reserved (all remaining params)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
     REQUEST_CAMERA_INFORMATION=521, /* Request camera information (CAMERA_INFORMATION). |0: No action 1: Request camera capabilities| Reserved (all remaining params)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
     REQUEST_CAMERA_SETTINGS=522, /* Request camera settings (CAMERA_SETTINGS). |0: No Action 1: Request camera settings| Reserved (all remaining params)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
@@ -574,13 +622,20 @@ enum class MAV_CMD : uint16_t
     REQUEST_FLIGHT_INFORMATION=528, /* Request flight information (FLIGHT_INFORMATION) |1: Request flight information| Reserved (all remaining params)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
     RESET_CAMERA_SETTINGS=529, /* Reset all camera settings to Factory Default |0: No Action 1: Reset all settings| Reserved (all remaining params)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
     SET_CAMERA_MODE=530, /* Set camera running mode. Use NaN for reserved values. GCS will send a MAV_CMD_REQUEST_VIDEO_STREAM_STATUS command after a mode change if the camera supports video streaming. |Reserved (Set to 0)| Camera mode| Reserved (all remaining params)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    SET_CAMERA_ZOOM=531, /* Set camera zoom. Camera must respond with a CAMERA_SETTINGS message (on success). Use NaN for reserved values. |Zoom type| Zoom value. The range of valid values depend on the zoom type.| Reserved (all remaining params)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    SET_CAMERA_FOCUS=532, /* Set camera focus. Camera must respond with a CAMERA_SETTINGS message (on success). Use NaN for reserved values. |Focus type| Focus value| Reserved (all remaining params)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
     JUMP_TAG=600, /* Tagged jump target. Can be jumped to with MAV_CMD_DO_JUMP_TAG. |Tag.| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
     DO_JUMP_TAG=601, /* Jump to the matching tag in the mission list. Repeat this action for the specified number of times. A mission should contain a single matching tag for each jump. If this is not the case then a jump to a missing tag should complete the mission, and a jump where there are multiple matching tags should always select the one with the lowest mission sequence number. |Target tag to jump to.| Repeat count.| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
     IMAGE_START_CAPTURE=2000, /* Start image capture sequence. Sends CAMERA_IMAGE_CAPTURED after each capture. Use NaN for reserved values. |Reserved (Set to 0)| Desired elapsed time between two consecutive pictures (in seconds). Minimum values depend on hardware (typically greater than 2 seconds).| Total number of images to capture. 0 to capture forever/until MAV_CMD_IMAGE_STOP_CAPTURE.| Capture sequence number starting from 1. This is only valid for single-capture (param3 == 1). Increment the capture ID for each capture command to prevent double captures when a command is re-transmitted. Use 0 to ignore it.| Reserved (all remaining params)| Reserved (default:0)| Reserved (default:0)|  */
     IMAGE_STOP_CAPTURE=2001, /* Stop image capture sequence Use NaN for reserved values. |Reserved (Set to 0)| Reserved (all remaining params)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    REQUEST_CAMERA_IMAGE_CAPTURE=2002, /* Re-request a CAMERA_IMAGE_CAPTURE message. Use NaN for reserved values. |Sequence number for missing CAMERA_IMAGE_CAPTURE message| Reserved (all remaining params)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
     DO_TRIGGER_CONTROL=2003, /* Enable or disable on-board camera triggering system. |Trigger enable/disable (0 for disable, 1 for start), -1 to ignore| 1 to reset the trigger sequence, -1 or 0 to ignore| 1 to pause triggering, but without switching the camera off or retracting it. -1 to ignore| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
     VIDEO_START_CAPTURE=2500, /* Starts video capture (recording). Use NaN for reserved values. |Video Stream ID (0 for all streams)| Frequency CAMERA_CAPTURE_STATUS messages should be sent while recording (0 for no messages, otherwise frequency)| Reserved (all remaining params)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
     VIDEO_STOP_CAPTURE=2501, /* Stop the current video capture (recording). Use NaN for reserved values. |Video Stream ID (0 for all streams)| Reserved (all remaining params)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    VIDEO_START_STREAMING=2502, /* Start video streaming |Video Stream ID (0 for all streams, 1 for first, 2 for second, etc.)| Reserved| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    VIDEO_STOP_STREAMING=2503, /* Stop the given video stream |Video Stream ID (0 for all streams, 1 for first, 2 for second, etc.)| Reserved| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    REQUEST_VIDEO_STREAM_INFORMATION=2504, /* Request video stream information (VIDEO_STREAM_INFORMATION) |Video Stream ID (0 for all streams, 1 for first, 2 for second, etc.)| Reserved (all remaining params)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    REQUEST_VIDEO_STREAM_STATUS=2505, /* Request video stream status (VIDEO_STREAM_STATUS) |Video Stream ID (0 for all streams, 1 for first, 2 for second, etc.)| Reserved (all remaining params)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
     LOGGING_START=2510, /* Request to start streaming logging data over MAVLink (see also LOGGING_DATA message) |Format: 0: ULog| Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)|  */
     LOGGING_STOP=2511, /* Request to stop streaming log data over MAVLink |Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)|  */
     AIRFRAME_CONFIGURATION=2520, /*  |Landing gear ID (default: 0, -1 for all)| Landing gear position (Down: 0, Up: 1, NaN for no change)| Reserved, set to NaN| Reserved, set to NaN| Reserved, set to NaN| Reserved, set to NaN| Reserved, set to NaN|  */
@@ -593,6 +648,7 @@ enum class MAV_CMD : uint16_t
                    |Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
     SET_GUIDED_SUBMODE_CIRCLE=4001, /* This command sets submode circle when vehicle is in guided mode. Vehicle flies along a circle facing the center of the circle. The user can input the velocity along the circle and change the radius. If no input is given the vehicle will hold position.
                    |Radius of desired circle in CIRCLE_MODE| User defined| User defined| User defined| Unscaled target latitude of center of circle in CIRCLE_MODE| Unscaled target longitude of center of circle in CIRCLE_MODE| Reserved (default:0)|  */
+    CONDITION_GATE=4501, /* Delay mission state machine until gate has been reached. |Geometry: 0: orthogonal to path between previous and next waypoint.| Altitude: 0: ignore altitude| Empty| Empty| Latitude| Longitude| Altitude|  */
     NAV_FENCE_RETURN_POINT=5000, /* Fence return point. There can only be one fence return point.
          |Reserved| Reserved| Reserved| Reserved| Latitude| Longitude| Altitude|  */
     NAV_FENCE_POLYGON_VERTEX_INCLUSION=5001, /* Fence vertex for an inclusion polygon (the polygon must not be self-intersecting). The vehicle must stay within this area. Minimum of 3 vertices required.
@@ -647,7 +703,7 @@ enum class MAV_DATA_STREAM
 //! MAV_DATA_STREAM ENUM_END
 constexpr auto MAV_DATA_STREAM_ENUM_END = 13;
 
-/** @brief THIS INTERFACE IS DEPRECATED AS OF JANUARY 2018. Please use MAV_CMD_DO_SET_ROI_* messages instead. The ROI (region of interest) for the vehicle. This can be
+/** @brief The ROI (region of interest) for the vehicle. This can be
                 be used by the vehicle for camera/vehicle attitude alignment (see
                 MAV_CMD_NAV_ROI). */
 enum class MAV_ROI
@@ -697,18 +753,38 @@ enum class MAV_PARAM_TYPE : uint8_t
 //! MAV_PARAM_TYPE ENUM_END
 constexpr auto MAV_PARAM_TYPE_ENUM_END = 11;
 
-/** @brief result from a mavlink command */
+/** @brief Specifies the datatype of a MAVLink extended parameter. */
+enum class MAV_PARAM_EXT_TYPE : uint8_t
+{
+    UINT8=1, /* 8-bit unsigned integer | */
+    INT8=2, /* 8-bit signed integer | */
+    UINT16=3, /* 16-bit unsigned integer | */
+    INT16=4, /* 16-bit signed integer | */
+    UINT32=5, /* 32-bit unsigned integer | */
+    INT32=6, /* 32-bit signed integer | */
+    UINT64=7, /* 64-bit unsigned integer | */
+    INT64=8, /* 64-bit signed integer | */
+    REAL32=9, /* 32-bit floating-point | */
+    REAL64=10, /* 64-bit floating-point | */
+    CUSTOM=11, /* Custom Type | */
+};
+
+//! MAV_PARAM_EXT_TYPE ENUM_END
+constexpr auto MAV_PARAM_EXT_TYPE_ENUM_END = 12;
+
+/** @brief Result from a MAVLink command (MAV_CMD) */
 enum class MAV_RESULT : uint8_t
 {
-    ACCEPTED=0, /* Command ACCEPTED and EXECUTED | */
-    TEMPORARILY_REJECTED=1, /* Command TEMPORARY REJECTED/DENIED | */
-    DENIED=2, /* Command PERMANENTLY DENIED | */
-    UNSUPPORTED=3, /* Command UNKNOWN/UNSUPPORTED | */
-    FAILED=4, /* Command executed, but failed | */
+    ACCEPTED=0, /* Command is valid (is supported and has valid parameters), and was executed. | */
+    TEMPORARILY_REJECTED=1, /* Command is valid, but cannot be executed at this time. This is used to indicate a problem that should be fixed just by waiting (e.g. a state machine is busy, can't arm because have not got GPS lock, etc.). Retrying later should work. | */
+    DENIED=2, /* Command is invalid (is supported but has invalid parameters). Retrying same command and parameters will not work. | */
+    UNSUPPORTED=3, /* Command is not supported (unknown). | */
+    FAILED=4, /* Command is valid, but execution has failed. This is used to indicate any non-temporary or unexpected problem, i.e. any problem that must be fixed before the command can succeed/be retried. For example, attempting to write a file when out of memory, attempting to arm when sensors are not calibrated, etc. | */
+    IN_PROGRESS=5, /* Command is valid and is being executed. This will be followed by further progress updates, i.e. the component may send further COMMAND_ACK messages with result MAV_RESULT_IN_PROGRESS (at a rate decided by the implementation), and must terminate by sending a COMMAND_ACK message with final result of the operation. The COMMAND_ACK.progress field can be used to indicate the progress of the operation. There is no need for the sender to retry the command, but if done during execution, the component will return MAV_RESULT_IN_PROGRESS with an updated progress. | */
 };
 
 //! MAV_RESULT ENUM_END
-constexpr auto MAV_RESULT_ENUM_END = 5;
+constexpr auto MAV_RESULT_ENUM_END = 6;
 
 /** @brief Result of mission operation (in a MISSION_ACK message). */
 enum class MAV_MISSION_RESULT : uint8_t
@@ -772,20 +848,10 @@ enum class SERIAL_CONTROL_DEV : uint8_t
     GPS1=2, /* First GPS port | */
     GPS2=3, /* Second GPS port | */
     SHELL=10, /* system shell | */
-    SERIAL0=100, /* SERIAL0 | */
-    SERIAL1=101, /* SERIAL1 | */
-    SERIAL2=102, /* SERIAL2 | */
-    SERIAL3=103, /* SERIAL3 | */
-    SERIAL4=104, /* SERIAL4 | */
-    SERIAL5=105, /* SERIAL5 | */
-    SERIAL6=106, /* SERIAL6 | */
-    SERIAL7=107, /* SERIAL7 | */
-    SERIAL8=108, /* SERIAL8 | */
-    SERIAL9=109, /* SERIAL9 | */
 };
 
 //! SERIAL_CONTROL_DEV ENUM_END
-constexpr auto SERIAL_CONTROL_DEV_ENUM_END = 110;
+constexpr auto SERIAL_CONTROL_DEV_ENUM_END = 11;
 
 /** @brief SERIAL_CONTROL flags (bitmask) */
 enum class SERIAL_CONTROL_FLAG : uint8_t
@@ -959,6 +1025,20 @@ enum class MAV_BATTERY_CHARGE_STATE : uint8_t
 //! MAV_BATTERY_CHARGE_STATE ENUM_END
 constexpr auto MAV_BATTERY_CHARGE_STATE_ENUM_END = 8;
 
+/** @brief Smart battery supply status/fault flags (bitmask) for health indication. */
+enum class MAV_SMART_BATTERY_FAULT : int32_t
+{
+    DEEP_DISCHARGE=1, /* Battery has deep discharged. | */
+    SPIKES=2, /* Voltage spikes. | */
+    SINGLE_CELL_FAIL=4, /* Single cell has failed. | */
+    OVER_CURRENT=8, /* Over-current fault. | */
+    OVER_TEMPERATURE=16, /* Over-temperature fault. | */
+    UNDER_TEMPERATURE=32, /* Under-temperature fault. | */
+};
+
+//! MAV_SMART_BATTERY_FAULT ENUM_END
+constexpr auto MAV_SMART_BATTERY_FAULT_ENUM_END = 33;
+
 /** @brief Enumeration of VTOL states */
 enum class MAV_VTOL_STATE : uint8_t
 {
@@ -1033,10 +1113,13 @@ enum class ADSB_FLAGS : uint16_t
     VALID_CALLSIGN=16, /*  | */
     VALID_SQUAWK=32, /*  | */
     SIMULATED=64, /*  | */
+    VERTICAL_VELOCITY_VALID=128, /*  | */
+    BARO_VALID=256, /*  | */
+    SOURCE_UAT=32768, /*  | */
 };
 
 //! ADSB_FLAGS ENUM_END
-constexpr auto ADSB_FLAGS_ENUM_END = 65;
+constexpr auto ADSB_FLAGS_ENUM_END = 32769;
 
 /** @brief Bitmap of options for the MAV_CMD_DO_REPOSITION */
 enum class MAV_DO_REPOSITION_FLAGS
@@ -1163,7 +1246,7 @@ constexpr auto GPS_FIX_TYPE_ENUM_END = 9;
 enum class RTK_BASELINE_COORDINATE_SYSTEM : uint8_t
 {
     ECEF=0, /* Earth-centered, Earth-fixed | */
-    NED=1, /* North, East, Down | */
+    NED=1, /* RTK basestation centered, north, east, down | */
 };
 
 //! RTK_BASELINE_COORDINATE_SYSTEM ENUM_END
@@ -1210,6 +1293,64 @@ enum class CAMERA_CAP_FLAGS : uint32_t
 
 //! CAMERA_CAP_FLAGS ENUM_END
 constexpr auto CAMERA_CAP_FLAGS_ENUM_END = 257;
+
+/** @brief Stream status flags (Bitmap) */
+enum class VIDEO_STREAM_STATUS_FLAGS : uint16_t
+{
+    RUNNING=1, /* Stream is active (running) | */
+    THERMAL=2, /* Stream is thermal imaging | */
+};
+
+//! VIDEO_STREAM_STATUS_FLAGS ENUM_END
+constexpr auto VIDEO_STREAM_STATUS_FLAGS_ENUM_END = 3;
+
+/** @brief Video stream types */
+enum class VIDEO_STREAM_TYPE : uint8_t
+{
+    RTSP=0, /* Stream is RTSP | */
+    RTPUDP=1, /* Stream is RTP UDP (URI gives the port number) | */
+    TCP_MPEG=2, /* Stream is MPEG on TCP | */
+    MPEG_TS_H264=3, /* Stream is h.264 on MPEG TS (URI gives the port number) | */
+};
+
+//! VIDEO_STREAM_TYPE ENUM_END
+constexpr auto VIDEO_STREAM_TYPE_ENUM_END = 4;
+
+/** @brief Zoom types for MAV_CMD_SET_CAMERA_ZOOM */
+enum class CAMERA_ZOOM_TYPE
+{
+    ZOOM_TYPE_STEP=0, /* Zoom one step increment (-1 for wide, 1 for tele) | */
+    ZOOM_TYPE_CONTINUOUS=1, /* Continuous zoom up/down until stopped (-1 for wide, 1 for tele, 0 to stop zooming) | */
+    ZOOM_TYPE_RANGE=2, /* Zoom value as proportion of full camera range (a value between 0.0 and 100.0) | */
+    ZOOM_TYPE_FOCAL_LENGTH=3, /* Zoom value/variable focal length in milimetres. Note that there is no message to get the valid zoom range of the camera, so this can type can only be used for cameras where the zoom range is known (implying that this cannot reliably be used in a GCS for an arbitrary camera) | */
+};
+
+//! CAMERA_ZOOM_TYPE ENUM_END
+constexpr auto CAMERA_ZOOM_TYPE_ENUM_END = 4;
+
+/** @brief Focus types for MAV_CMD_SET_CAMERA_FOCUS */
+enum class SET_FOCUS_TYPE
+{
+    FOCUS_TYPE_STEP=0, /* Focus one step increment (-1 for focusing in, 1 for focusing out towards infinity). | */
+    FOCUS_TYPE_CONTINUOUS=1, /* Continuous focus up/down until stopped (-1 for focusing in, 1 for focusing out towards infinity, 0 to stop focusing) | */
+    FOCUS_TYPE_RANGE=2, /* Focus value as proportion of full camera focus range (a value between 0.0 and 100.0) | */
+    FOCUS_TYPE_METERS=3, /* Focus value in metres. Note that there is no message to get the valid focus range of the camera, so this can type can only be used for cameras where the range is known (implying that this cannot reliably be used in a GCS for an arbitrary camera). | */
+};
+
+//! SET_FOCUS_TYPE ENUM_END
+constexpr auto SET_FOCUS_TYPE_ENUM_END = 4;
+
+/** @brief Result from a PARAM_EXT_SET message. */
+enum class PARAM_ACK : uint8_t
+{
+    ACCEPTED=0, /* Parameter value ACCEPTED and SET | */
+    VALUE_UNSUPPORTED=1, /* Parameter value UNKNOWN/UNSUPPORTED | */
+    FAILED=2, /* Parameter failed to set | */
+    IN_PROGRESS=3, /* Parameter value received but not yet validated or set. A subsequent PARAM_EXT_ACK will follow once operation is completed with the actual result. These are for parameters that may take longer to set. Instead of waiting for an ACK and potentially timing out, you will immediately receive this response to let you know it was received. | */
+};
+
+//! PARAM_ACK ENUM_END
+constexpr auto PARAM_ACK_ENUM_END = 4;
 
 /** @brief Camera Modes. */
 enum class CAMERA_MODE : uint8_t
@@ -1266,6 +1407,57 @@ enum class POSITION_TARGET_TYPEMASK : uint16_t
 //! POSITION_TARGET_TYPEMASK ENUM_END
 constexpr auto POSITION_TARGET_TYPEMASK_ENUM_END = 2049;
 
+/** @brief Airborne status of UAS. */
+enum class UTM_FLIGHT_STATE : uint8_t
+{
+    UNKNOWN=1, /* The flight state can't be determined. | */
+    GROUND=2, /* UAS on ground. | */
+    AIRBORNE=3, /* UAS airborne. | */
+    EMERGENCY=16, /* UAS is in an emergency flight state. | */
+    NOCTRL=32, /* UAS has no active controls. | */
+};
+
+//! UTM_FLIGHT_STATE ENUM_END
+constexpr auto UTM_FLIGHT_STATE_ENUM_END = 33;
+
+/** @brief Flags for the global position report. */
+enum class UTM_DATA_AVAIL_FLAGS : uint8_t
+{
+    TIME_VALID=1, /* The field time contains valid data. | */
+    UAS_ID_AVAILABLE=2, /* The field uas_id contains valid data. | */
+    POSITION_AVAILABLE=4, /* The fields lat, lon and h_acc contain valid data. | */
+    ALTITUDE_AVAILABLE=8, /* The fields alt and v_acc contain valid data. | */
+    RELATIVE_ALTITUDE_AVAILABLE=16, /* The field relative_alt contains valid data. | */
+    HORIZONTAL_VELO_AVAILABLE=32, /* The fields vx and vy contain valid data. | */
+    VERTICAL_VELO_AVAILABLE=64, /* The field vz contains valid data. | */
+    NEXT_WAYPOINT_AVAILABLE=128, /* The fields next_lat, next_lon and next_alt contain valid data. | */
+};
+
+//! UTM_DATA_AVAIL_FLAGS ENUM_END
+constexpr auto UTM_DATA_AVAIL_FLAGS_ENUM_END = 129;
+
+/** @brief Cellular network radio type */
+enum class CELLULAR_NETWORK_RADIO_TYPE : uint8_t
+{
+    NONE=0, /*  | */
+    GSM=1, /*  | */
+    CDMA=2, /*  | */
+    WCDMA=3, /*  | */
+    LTE=4, /*  | */
+};
+
+//! CELLULAR_NETWORK_RADIO_TYPE ENUM_END
+constexpr auto CELLULAR_NETWORK_RADIO_TYPE_ENUM_END = 5;
+
+/** @brief These flags encode the cellular network status */
+enum class CELLULAR_NETWORK_STATUS_FLAG : uint16_t
+{
+    ROAMING=1, /* Roaming is active | */
+};
+
+//! CELLULAR_NETWORK_STATUS_FLAG ENUM_END
+constexpr auto CELLULAR_NETWORK_STATUS_FLAG_ENUM_END = 2;
+
 /** @brief Precision land modes (used in MAV_CMD_NAV_LAND). */
 enum class PRECISION_LAND_MODE
 {
@@ -1288,6 +1480,370 @@ enum class PARACHUTE_ACTION
 //! PARACHUTE_ACTION ENUM_END
 constexpr auto PARACHUTE_ACTION_ENUM_END = 3;
 
+/** @brief  */
+enum class MAV_TUNNEL_PAYLOAD_TYPE : uint16_t
+{
+    UNKNOWN=0, /* Encoding of payload unknown. | */
+    STORM32_RESERVED0=200, /* Registered for STorM32 gimbal controller. | */
+    STORM32_RESERVED1=201, /* Registered for STorM32 gimbal controller. | */
+    STORM32_RESERVED2=202, /* Registered for STorM32 gimbal controller. | */
+    STORM32_RESERVED3=203, /* Registered for STorM32 gimbal controller. | */
+    STORM32_RESERVED4=204, /* Registered for STorM32 gimbal controller. | */
+    STORM32_RESERVED5=205, /* Registered for STorM32 gimbal controller. | */
+    STORM32_RESERVED6=206, /* Registered for STorM32 gimbal controller. | */
+    STORM32_RESERVED7=207, /* Registered for STorM32 gimbal controller. | */
+    STORM32_RESERVED8=208, /* Registered for STorM32 gimbal controller. | */
+    STORM32_RESERVED9=209, /* Registered for STorM32 gimbal controller. | */
+};
+
+//! MAV_TUNNEL_PAYLOAD_TYPE ENUM_END
+constexpr auto MAV_TUNNEL_PAYLOAD_TYPE_ENUM_END = 210;
+
+/** @brief  */
+enum class MAV_ODID_ID_TYPE : uint8_t
+{
+    NONE=0, /* No type defined. | */
+    SERIAL_NUMBER=1, /* Manufacturer Serial Number (ANSI/CTA-2063 format). | */
+    CAA_REGISTRATION_ID=2, /* CAA (Civil Aviation Authority) registered ID. Format: [ICAO Country Code].[CAA Assigned ID]. | */
+    UTM_ASSIGNED_UUID=3, /* UTM (Unmanned Traffic Management) assigned UUID (RFC4122). | */
+};
+
+//! MAV_ODID_ID_TYPE ENUM_END
+constexpr auto MAV_ODID_ID_TYPE_ENUM_END = 4;
+
+/** @brief  */
+enum class MAV_ODID_UA_TYPE : uint8_t
+{
+    NONE=0, /* No UA (Unmanned Aircraft) type defined. | */
+    AEROPLANE=1, /* Aeroplane/Airplane. Fixed wing. | */
+    ROTORCRAFT=2, /* Rotorcraft (including Multirotor). | */
+    GYROPLANE=3, /* Gyroplane. | */
+    VTOL=4, /* VTOL (Vertical Take-Off and Landing). Fixed wing aircraft that can take off vertically. | */
+    ORNITHOPTER=5, /* Ornithopter. | */
+    GLIDER=6, /* Glider. | */
+    KITE=7, /* Kite. | */
+    FREE_BALLOON=8, /* Free Balloon. | */
+    CAPTIVE_BALLOON=9, /* Captive Balloon. | */
+    AIRSHIP=10, /* Airship. E.g. a blimp. | */
+    FREE_FALL_PARACHUTE=11, /* Free Fall/Parachute. | */
+    ROCKET=12, /* Rocket. | */
+    TETHERED_POWERED_AIRCRAFT=13, /* Tethered powered aircraft. | */
+    GROUND_OBSTACLE=14, /* Ground Obstacle. | */
+    OTHER=15, /* Other type of aircraft not listed earlier. | */
+};
+
+//! MAV_ODID_UA_TYPE ENUM_END
+constexpr auto MAV_ODID_UA_TYPE_ENUM_END = 16;
+
+/** @brief  */
+enum class MAV_ODID_STATUS : uint8_t
+{
+    UNDECLARED=0, /* The status of the (UA) Unmanned Aircraft is undefined. | */
+    GROUND=1, /* The UA is on the ground. | */
+    AIRBORNE=2, /* The UA is in the air. | */
+};
+
+//! MAV_ODID_STATUS ENUM_END
+constexpr auto MAV_ODID_STATUS_ENUM_END = 3;
+
+/** @brief  */
+enum class MAV_ODID_HEIGHT_REF : uint8_t
+{
+    OVER_TAKEOFF=0, /* The height field is relative to the take-off location. | */
+    OVER_GROUND=1, /* The height field is relative to ground. | */
+};
+
+//! MAV_ODID_HEIGHT_REF ENUM_END
+constexpr auto MAV_ODID_HEIGHT_REF_ENUM_END = 2;
+
+/** @brief  */
+enum class MAV_ODID_HOR_ACC : uint8_t
+{
+    UNKNOWN=0, /* The horizontal accuracy is unknown. | */
+    ACC_10NM=1, /* The horizontal accuracy is smaller than 10 Nautical Miles. 18.52 km. | */
+    ACC_4NM=2, /* The horizontal accuracy is smaller than 4 Nautical Miles. 7.408 km. | */
+    ACC_2NM=3, /* The horizontal accuracy is smaller than 2 Nautical Miles. 3.704 km. | */
+    ACC_1NM=4, /* The horizontal accuracy is smaller than 1 Nautical Miles. 1.852 km. | */
+    ACC_0_5NM=5, /* The horizontal accuracy is smaller than 0.5 Nautical Miles. 926 m. | */
+    ACC_0_3NM=6, /* The horizontal accuracy is smaller than 0.3 Nautical Miles. 555.6 m. | */
+    ACC_0_1NM=7, /* The horizontal accuracy is smaller than 0.1 Nautical Miles. 185.2 m. | */
+    ACC_0_05NM=8, /* The horizontal accuracy is smaller than 0.05 Nautical Miles. 92.6 m. | */
+    ACC_30_METER=9, /* The horizontal accuracy is smaller than 30 meter. | */
+    ACC_10_METER=10, /* The horizontal accuracy is smaller than 10 meter. | */
+    ACC_3_METER=11, /* The horizontal accuracy is smaller than 3 meter. | */
+    ACC_1_METER=12, /* The horizontal accuracy is smaller than 1 meter. | */
+};
+
+//! MAV_ODID_HOR_ACC ENUM_END
+constexpr auto MAV_ODID_HOR_ACC_ENUM_END = 13;
+
+/** @brief  */
+enum class MAV_ODID_VER_ACC : uint8_t
+{
+    UNKNOWN=0, /* The vertical accuracy is unknown. | */
+    ACC_150_METER=1, /* The vertical accuracy is smaller than 150 meter. | */
+    ACC_45_METER=2, /* The vertical accuracy is smaller than 45 meter. | */
+    ACC_25_METER=3, /* The vertical accuracy is smaller than 25 meter. | */
+    ACC_10_METER=4, /* The vertical accuracy is smaller than 10 meter. | */
+    ACC_3_METER=5, /* The vertical accuracy is smaller than 3 meter. | */
+    ACC_1_METER=6, /* The vertical accuracy is smaller than 1 meter. | */
+};
+
+//! MAV_ODID_VER_ACC ENUM_END
+constexpr auto MAV_ODID_VER_ACC_ENUM_END = 7;
+
+/** @brief  */
+enum class MAV_ODID_SPEED_ACC : uint8_t
+{
+    UNKNOWN=0, /* The speed accuracy is unknown. | */
+    ACC_10_METERS_PER_SECOND=1, /* The speed accuracy is smaller than 10 meters per second. | */
+    ACC_3_METERS_PER_SECOND=2, /* The speed accuracy is smaller than 3 meters per second. | */
+    ACC_1_METERS_PER_SECOND=3, /* The speed accuracy is smaller than 1 meters per second. | */
+    ACC_0_3_METERS_PER_SECOND=4, /* The speed accuracy is smaller than 0.3 meters per second. | */
+};
+
+//! MAV_ODID_SPEED_ACC ENUM_END
+constexpr auto MAV_ODID_SPEED_ACC_ENUM_END = 5;
+
+/** @brief  */
+enum class MAV_ODID_TIME_ACC : uint8_t
+{
+    UNKNOWN=0, /* The timestamp accuracy is unknown. | */
+    ACC_0_1_SECOND=1, /* The timestamp accuracy is smaller than 0.1 second. | */
+    ACC_0_2_SECOND=2, /* The timestamp accuracy is smaller than 0.2 second. | */
+    ACC_0_3_SECOND=3, /* The timestamp accuracy is smaller than 0.3 second. | */
+    ACC_0_4_SECOND=4, /* The timestamp accuracy is smaller than 0.4 second. | */
+    ACC_0_5_SECOND=5, /* The timestamp accuracy is smaller than 0.5 second. | */
+    ACC_0_6_SECOND=6, /* The timestamp accuracy is smaller than 0.6 second. | */
+    ACC_0_7_SECOND=7, /* The timestamp accuracy is smaller than 0.7 second. | */
+    ACC_0_8_SECOND=8, /* The timestamp accuracy is smaller than 0.8 second. | */
+    ACC_0_9_SECOND=9, /* The timestamp accuracy is smaller than 0.9 second. | */
+    ACC_1_0_SECOND=10, /* The timestamp accuracy is smaller than 1.0 second. | */
+    ACC_1_1_SECOND=11, /* The timestamp accuracy is smaller than 1.1 second. | */
+    ACC_1_2_SECOND=12, /* The timestamp accuracy is smaller than 1.2 second. | */
+    ACC_1_3_SECOND=13, /* The timestamp accuracy is smaller than 1.3 second. | */
+    ACC_1_4_SECOND=14, /* The timestamp accuracy is smaller than 1.4 second. | */
+    ACC_1_5_SECOND=15, /* The timestamp accuracy is smaller than 1.5 second. | */
+};
+
+//! MAV_ODID_TIME_ACC ENUM_END
+constexpr auto MAV_ODID_TIME_ACC_ENUM_END = 16;
+
+/** @brief  */
+enum class MAV_ODID_AUTH_TYPE : uint8_t
+{
+    NONE=0, /* No authentication type is specified. | */
+    UAS_ID_SIGNATURE=1, /* Signature for the UAS (Unmanned Aircraft System) ID. | */
+    OPERATOR_ID_SIGNATURE=2, /* Signature for the Operator ID. | */
+    MESSAGE_SET_SIGNATURE=3, /* Signature for the entire message set. | */
+    NETWORK_REMOTE_ID=4, /* Authentication is provided by Network Remote ID. | */
+};
+
+//! MAV_ODID_AUTH_TYPE ENUM_END
+constexpr auto MAV_ODID_AUTH_TYPE_ENUM_END = 5;
+
+/** @brief  */
+enum class MAV_ODID_DESC_TYPE : uint8_t
+{
+    TEXT=0, /* Free-form text description of the purpose of the flight. | */
+};
+
+//! MAV_ODID_DESC_TYPE ENUM_END
+constexpr auto MAV_ODID_DESC_TYPE_ENUM_END = 1;
+
+/** @brief  */
+enum class MAV_ODID_LOCATION_SRC : uint8_t
+{
+    TAKEOFF=0, /* The location of the operator is the same as the take-off location. | */
+    LIVE_GNSS=1, /* The location of the operator is based on live GNSS data. | */
+    FIXED=2, /* The location of the operator is a fixed location. | */
+};
+
+//! MAV_ODID_LOCATION_SRC ENUM_END
+constexpr auto MAV_ODID_LOCATION_SRC_ENUM_END = 3;
+
+/** @brief  */
+enum class MAV_ODID_OPERATOR_ID_TYPE : uint8_t
+{
+    CAA=0, /* CAA (Civil Aviation Authority) registered operator ID. | */
+};
+
+//! MAV_ODID_OPERATOR_ID_TYPE ENUM_END
+constexpr auto MAV_ODID_OPERATOR_ID_TYPE_ENUM_END = 1;
+
+/** @brief Tune formats (used for vehicle buzzer/tone generation). */
+enum class TUNE_FORMAT : uint32_t
+{
+    QBASIC1_1=1, /* Format is QBasic 1.1 Play: https://www.qbasic.net/en/reference/qb11/Statement/PLAY-006.htm. | */
+    MML_MODERN=2, /* Format is Modern Music Markup Language (MML): https://en.wikipedia.org/wiki/Music_Macro_Language#Modern_MML. | */
+};
+
+//! TUNE_FORMAT ENUM_END
+constexpr auto TUNE_FORMAT_ENUM_END = 3;
+
+/** @brief Component capability flags (Bitmap) */
+enum class COMPONENT_CAP_FLAGS : uint32_t
+{
+    PARAM=1, /* Component has parameters, and supports the parameter protocol (PARAM messages). | */
+    PARAM_EXT=2, /* Component has parameters, and supports the extended parameter protocol (PARAM_EXT messages). | */
+};
+
+//! COMPONENT_CAP_FLAGS ENUM_END
+constexpr auto COMPONENT_CAP_FLAGS_ENUM_END = 3;
+
+/** @brief Type of AIS vessel, enum duplicated from AIS standard, https://gpsd.gitlab.io/gpsd/AIVDM.html */
+enum class AIS_TYPE : uint8_t
+{
+    UNKNOWN=0, /* Not available (default). | */
+    RESERVED_1=1, /*  | */
+    RESERVED_2=2, /*  | */
+    RESERVED_3=3, /*  | */
+    RESERVED_4=4, /*  | */
+    RESERVED_5=5, /*  | */
+    RESERVED_6=6, /*  | */
+    RESERVED_7=7, /*  | */
+    RESERVED_8=8, /*  | */
+    RESERVED_9=9, /*  | */
+    RESERVED_10=10, /*  | */
+    RESERVED_11=11, /*  | */
+    RESERVED_12=12, /*  | */
+    RESERVED_13=13, /*  | */
+    RESERVED_14=14, /*  | */
+    RESERVED_15=15, /*  | */
+    RESERVED_16=16, /*  | */
+    RESERVED_17=17, /*  | */
+    RESERVED_18=18, /*  | */
+    RESERVED_19=19, /*  | */
+    WIG=20, /* Wing In Ground effect. | */
+    WIG_HAZARDOUS_A=21, /*  | */
+    WIG_HAZARDOUS_B=22, /*  | */
+    WIG_HAZARDOUS_C=23, /*  | */
+    WIG_HAZARDOUS_D=24, /*  | */
+    WIG_RESERVED_1=25, /*  | */
+    WIG_RESERVED_2=26, /*  | */
+    WIG_RESERVED_3=27, /*  | */
+    WIG_RESERVED_4=28, /*  | */
+    WIG_RESERVED_5=29, /*  | */
+    FISHING=30, /*  | */
+    TOWING=31, /*  | */
+    TOWING_LARGE=32, /* Towing: length exceeds 200m or breadth exceeds 25m. | */
+    DREDGING=33, /* Dredging or other underwater ops. | */
+    DIVING=34, /*  | */
+    MILITARY=35, /*  | */
+    SAILING=36, /*  | */
+    PLEASURE=37, /*  | */
+    RESERVED_20=38, /*  | */
+    RESERVED_21=39, /*  | */
+    HSC=40, /* High Speed Craft. | */
+    HSC_HAZARDOUS_A=41, /*  | */
+    HSC_HAZARDOUS_B=42, /*  | */
+    HSC_HAZARDOUS_C=43, /*  | */
+    HSC_HAZARDOUS_D=44, /*  | */
+    HSC_RESERVED_1=45, /*  | */
+    HSC_RESERVED_2=46, /*  | */
+    HSC_RESERVED_3=47, /*  | */
+    HSC_RESERVED_4=48, /*  | */
+    HSC_UNKNOWN=49, /*  | */
+    PILOT=50, /*  | */
+    SAR=51, /* Search And Rescue vessel. | */
+    TUG=52, /*  | */
+    PORT_TENDER=53, /*  | */
+    ANTI_POLLUTION=54, /* Anti-pollution equipment. | */
+    LAW_ENFORCEMENT=55, /*  | */
+    SPARE_LOCAL_1=56, /*  | */
+    SPARE_LOCAL_2=57, /*  | */
+    MEDICAL_TRANSPORT=58, /*  | */
+    NONECOMBATANT=59, /* Noncombatant ship according to RR Resolution No. 18. | */
+    PASSENGER=60, /*  | */
+    PASSENGER_HAZARDOUS_A=61, /*  | */
+    PASSENGER_HAZARDOUS_B=62, /*  | */
+    AIS_TYPE_PASSENGER_HAZARDOUS_C=63, /*  | */
+    PASSENGER_HAZARDOUS_D=64, /*  | */
+    PASSENGER_RESERVED_1=65, /*  | */
+    PASSENGER_RESERVED_2=66, /*  | */
+    PASSENGER_RESERVED_3=67, /*  | */
+    AIS_TYPE_PASSENGER_RESERVED_4=68, /*  | */
+    PASSENGER_UNKNOWN=69, /*  | */
+    CARGO=70, /*  | */
+    CARGO_HAZARDOUS_A=71, /*  | */
+    CARGO_HAZARDOUS_B=72, /*  | */
+    CARGO_HAZARDOUS_C=73, /*  | */
+    CARGO_HAZARDOUS_D=74, /*  | */
+    CARGO_RESERVED_1=75, /*  | */
+    CARGO_RESERVED_2=76, /*  | */
+    CARGO_RESERVED_3=77, /*  | */
+    CARGO_RESERVED_4=78, /*  | */
+    CARGO_UNKNOWN=79, /*  | */
+    TANKER=80, /*  | */
+    TANKER_HAZARDOUS_A=81, /*  | */
+    TANKER_HAZARDOUS_B=82, /*  | */
+    TANKER_HAZARDOUS_C=83, /*  | */
+    TANKER_HAZARDOUS_D=84, /*  | */
+    TANKER_RESERVED_1=85, /*  | */
+    TANKER_RESERVED_2=86, /*  | */
+    TANKER_RESERVED_3=87, /*  | */
+    TANKER_RESERVED_4=88, /*  | */
+    TANKER_UNKNOWN=89, /*  | */
+    OTHER=90, /*  | */
+    OTHER_HAZARDOUS_A=91, /*  | */
+    OTHER_HAZARDOUS_B=92, /*  | */
+    OTHER_HAZARDOUS_C=93, /*  | */
+    OTHER_HAZARDOUS_D=94, /*  | */
+    OTHER_RESERVED_1=95, /*  | */
+    OTHER_RESERVED_2=96, /*  | */
+    OTHER_RESERVED_3=97, /*  | */
+    OTHER_RESERVED_4=98, /*  | */
+    OTHER_UNKNOWN=99, /*  | */
+};
+
+//! AIS_TYPE ENUM_END
+constexpr auto AIS_TYPE_ENUM_END = 100;
+
+/** @brief Navigational status of AIS vessel, enum duplicated from AIS standard, https://gpsd.gitlab.io/gpsd/AIVDM.html */
+enum class AIS_NAV_STATUS : uint8_t
+{
+    UNDER_WAY=0, /* Under way using engine. | */
+    ANCHORED=1, /*  | */
+    UN_COMMANDED=2, /*  | */
+    RESTRICTED_MANOEUVERABILITY=3, /*  | */
+    DRAUGHT_CONSTRAINED=4, /*  | */
+    MOORED=5, /*  | */
+    AGROUND=6, /*  | */
+    FISHING=7, /*  | */
+    SAILING=8, /*  | */
+    RESERVED_HSC=9, /*  | */
+    RESERVED_WIG=10, /*  | */
+    RESERVED_1=11, /*  | */
+    RESERVED_2=12, /*  | */
+    RESERVED_3=13, /*  | */
+    AIS_SART=14, /* Search And Rescue Transponder. | */
+    UNKNOWN=15, /* Not available (default). | */
+};
+
+//! AIS_NAV_STATUS ENUM_END
+constexpr auto AIS_NAV_STATUS_ENUM_END = 16;
+
+/** @brief These flags are used in the AIS_VESSEL.fields bitmask to indicate validity of data in the other message fields. When set, the data is valid. */
+enum class AIS_FLAGS : uint16_t
+{
+    POSITION_ACCURACY=1, /* 1 = Position accuracy less than 10m, 0 = position accuracy greater than 10m. | */
+    VALID_COG=2, /*  | */
+    VALID_VELOCITY=4, /*  | */
+    HIGH_VELOCITY=8, /* 1 = Velocity over 52.5765m/s (102.2 knots) | */
+    VALID_TURN_RATE=16, /*  | */
+    TURN_RATE_SIGN_ONLY=32, /* Only the sign of the returned turn rate value is valid, either greater than 5deg/30s or less than -5deg/30s | */
+    VALID_DIMENSIONS=64, /*  | */
+    LARGE_BOW_DIMENSION=128, /* Distance to bow is larger than 511m | */
+    LARGE_STERN_DIMENSION=256, /* Distance to stern is larger than 511m | */
+    LARGE_PORT_DIMENSION=512, /* Distance to port side is larger than 63m | */
+    LARGE_STARBOARD_DIMENSION=1024, /* Distance to starboard side is larger than 63m | */
+    VALID_CALLSIGN=2048, /*  | */
+    VALID_NAME=4096, /*  | */
+};
+
+//! AIS_FLAGS ENUM_END
+constexpr auto AIS_FLAGS_ENUM_END = 4097;
+
 
 } // namespace common
 } // namespace mavlink
@@ -1300,6 +1856,7 @@ constexpr auto PARACHUTE_ACTION_ENUM_END = 3;
 #include "./mavlink_msg_change_operator_control.hpp"
 #include "./mavlink_msg_change_operator_control_ack.hpp"
 #include "./mavlink_msg_auth_key.hpp"
+#include "./mavlink_msg_link_node_status.hpp"
 #include "./mavlink_msg_set_mode.hpp"
 #include "./mavlink_msg_param_request_read.hpp"
 #include "./mavlink_msg_param_request_list.hpp"
@@ -1333,6 +1890,7 @@ constexpr auto PARACHUTE_ACTION_ENUM_END = 3;
 #include "./mavlink_msg_gps_global_origin.hpp"
 #include "./mavlink_msg_param_map_rc.hpp"
 #include "./mavlink_msg_mission_request_int.hpp"
+#include "./mavlink_msg_mission_changed.hpp"
 #include "./mavlink_msg_safety_set_allowed_area.hpp"
 #include "./mavlink_msg_safety_allowed_area.hpp"
 #include "./mavlink_msg_attitude_quaternion_cov.hpp"
@@ -1416,6 +1974,7 @@ constexpr auto PARACHUTE_ACTION_ENUM_END = 3;
 #include "./mavlink_msg_gps_input.hpp"
 #include "./mavlink_msg_gps_rtcm_data.hpp"
 #include "./mavlink_msg_high_latency.hpp"
+#include "./mavlink_msg_high_latency2.hpp"
 #include "./mavlink_msg_vibration.hpp"
 #include "./mavlink_msg_home_position.hpp"
 #include "./mavlink_msg_set_home_position.hpp"
@@ -1443,16 +2002,45 @@ constexpr auto PARACHUTE_ACTION_ENUM_END = 3;
 #include "./mavlink_msg_logging_data.hpp"
 #include "./mavlink_msg_logging_data_acked.hpp"
 #include "./mavlink_msg_logging_ack.hpp"
+#include "./mavlink_msg_video_stream_information.hpp"
+#include "./mavlink_msg_video_stream_status.hpp"
 #include "./mavlink_msg_wifi_config_ap.hpp"
+#include "./mavlink_msg_protocol_version.hpp"
+#include "./mavlink_msg_ais_vessel.hpp"
 #include "./mavlink_msg_uavcan_node_status.hpp"
 #include "./mavlink_msg_uavcan_node_info.hpp"
+#include "./mavlink_msg_param_ext_request_read.hpp"
+#include "./mavlink_msg_param_ext_request_list.hpp"
+#include "./mavlink_msg_param_ext_value.hpp"
+#include "./mavlink_msg_param_ext_set.hpp"
+#include "./mavlink_msg_param_ext_ack.hpp"
 #include "./mavlink_msg_obstacle_distance.hpp"
 #include "./mavlink_msg_odometry.hpp"
+#include "./mavlink_msg_trajectory_representation_waypoints.hpp"
+#include "./mavlink_msg_trajectory_representation_bezier.hpp"
+#include "./mavlink_msg_cellular_status.hpp"
 #include "./mavlink_msg_isbd_link_status.hpp"
+#include "./mavlink_msg_utm_global_position.hpp"
 #include "./mavlink_msg_debug_float_array.hpp"
+#include "./mavlink_msg_orbit_execution_status.hpp"
 #include "./mavlink_msg_statustext_long.hpp"
+#include "./mavlink_msg_smart_battery_info.hpp"
+#include "./mavlink_msg_smart_battery_status.hpp"
 #include "./mavlink_msg_actuator_output_status.hpp"
+#include "./mavlink_msg_time_estimate_to_target.hpp"
+#include "./mavlink_msg_tunnel.hpp"
+#include "./mavlink_msg_onboard_computer_status.hpp"
+#include "./mavlink_msg_component_information.hpp"
+#include "./mavlink_msg_play_tune_v2.hpp"
+#include "./mavlink_msg_supported_tunes.hpp"
 #include "./mavlink_msg_wheel_distance.hpp"
+#include "./mavlink_msg_open_drone_id_basic_id.hpp"
+#include "./mavlink_msg_open_drone_id_location.hpp"
+#include "./mavlink_msg_open_drone_id_authentication.hpp"
+#include "./mavlink_msg_open_drone_id_self_id.hpp"
+#include "./mavlink_msg_open_drone_id_system.hpp"
+#include "./mavlink_msg_open_drone_id_operator_id.hpp"
+#include "./mavlink_msg_open_drone_id_message_pack.hpp"
 
 // base include
 

@@ -6,7 +6,6 @@
 #include "GameFramework/Pawn.h"
 #include "RoboBars_Main.generated.h"
 
-
 UENUM()
 // 判断美手还是日手
 enum ModeOperation
@@ -59,11 +58,13 @@ public:
 
 	// 操作模式
 	ModeOperation ModeOpera;
+public:
+
+	void GetRCData();
 
 private:
 
 	void Init();
 
 	void UpdataRCData();
-
 };

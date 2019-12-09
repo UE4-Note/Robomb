@@ -9,7 +9,7 @@ namespace msg {
 /**
  * @brief ACTUATOR_OUTPUT_STATUS message
  *
- * The raw values of the actuator outputs.
+ * The raw values of the actuator outputs (e.g. on Pixhawk, from MAIN, AUX ports). This message supersedes SERVO_OUTPUT_RAW.
  */
 struct ACTUATOR_OUTPUT_STATUS : mavlink::Message {
     static constexpr msgid_t MSG_ID = 375;

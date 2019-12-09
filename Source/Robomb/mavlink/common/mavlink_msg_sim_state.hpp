@@ -37,9 +37,9 @@ struct SIM_STATE : mavlink::Message {
     float alt; /*< [m] Altitude */
     float std_dev_horz; /*<  Horizontal position standard deviation */
     float std_dev_vert; /*<  Vertical position standard deviation */
-    float vn; /*< [m/s] True velocity in NORTH direction in earth-fixed NED frame */
-    float ve; /*< [m/s] True velocity in EAST direction in earth-fixed NED frame */
-    float vd; /*< [m/s] True velocity in DOWN direction in earth-fixed NED frame */
+    float vn; /*< [m/s] True velocity in north direction in earth-fixed NED frame */
+    float ve; /*< [m/s] True velocity in east direction in earth-fixed NED frame */
+    float vd; /*< [m/s] True velocity in down direction in earth-fixed NED frame */
 
 
     inline std::string get_name(void) const override

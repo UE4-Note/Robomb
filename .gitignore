@@ -1,7 +1,6 @@
 
 # visual studio
 .vs
-
 *.sln
 *.suo
 *.opensdf
@@ -12,7 +11,3 @@ Build
 Intermediate
 Binaries
 Saved
-/*/Binaries/**
-/*/Plugins/**/Binaries/**
-/*/Plugins/**/Intermediate/**
-

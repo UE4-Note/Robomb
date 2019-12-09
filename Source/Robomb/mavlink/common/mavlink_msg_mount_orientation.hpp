@@ -22,8 +22,8 @@ struct MOUNT_ORIENTATION : mavlink::Message {
     uint32_t time_boot_ms; /*< [ms] Timestamp (time since system boot). */
     float roll; /*< [deg] Roll in global frame (set to NaN for invalid). */
     float pitch; /*< [deg] Pitch in global frame (set to NaN for invalid). */
-    float yaw; /*< [deg] Yaw relative to vehicle(set to NaN for invalid). */
-    float yaw_absolute; /*< [deg] Yaw in absolute frame, North is 0 (set to NaN for invalid). */
+    float yaw; /*< [deg] Yaw relative to vehicle (set to NaN for invalid). */
+    float yaw_absolute; /*< [deg] Yaw in absolute frame relative to Earth's North, north is 0 (set to NaN for invalid). */
 
 
     inline std::string get_name(void) const override

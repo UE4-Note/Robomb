@@ -12,9 +12,9 @@ typedef struct __mavlink_gps_input_t {
  float alt; /*< [m] Altitude (MSL). Positive for up.*/
  float hdop; /*< [m] GPS HDOP horizontal dilution of position*/
  float vdop; /*< [m] GPS VDOP vertical dilution of position*/
- float vn; /*< [m/s] GPS velocity in NORTH direction in earth-fixed NED frame*/
- float ve; /*< [m/s] GPS velocity in EAST direction in earth-fixed NED frame*/
- float vd; /*< [m/s] GPS velocity in DOWN direction in earth-fixed NED frame*/
+ float vn; /*< [m/s] GPS velocity in north direction in earth-fixed NED frame*/
+ float ve; /*< [m/s] GPS velocity in east direction in earth-fixed NED frame*/
+ float vd; /*< [m/s] GPS velocity in down direction in earth-fixed NED frame*/
  float speed_accuracy; /*< [m/s] GPS speed accuracy*/
  float horiz_accuracy; /*< [m] GPS horizontal accuracy*/
  float vert_accuracy; /*< [m] GPS vertical accuracy*/
@@ -23,7 +23,7 @@ typedef struct __mavlink_gps_input_t {
  uint8_t gps_id; /*<  ID of the GPS for multiple GPS inputs*/
  uint8_t fix_type; /*<  0-1: no fix, 2: 2D fix, 3: 3D fix. 4: 3D with DGPS. 5: 3D with RTK*/
  uint8_t satellites_visible; /*<  Number of satellites visible.*/
- uint16_t yaw; /*< [cdeg] Yaw of vehicle, zero means not available, use 36000 for north*/
+ uint16_t yaw; /*< [cdeg] Yaw of vehicle relative to Earth's North, zero means not available, use 36000 for north*/
 }) mavlink_gps_input_t;
 
 #define MAVLINK_MSG_ID_GPS_INPUT_LEN 65
@@ -106,14 +106,14 @@ typedef struct __mavlink_gps_input_t {
  * @param alt [m] Altitude (MSL). Positive for up.
  * @param hdop [m] GPS HDOP horizontal dilution of position
  * @param vdop [m] GPS VDOP vertical dilution of position
- * @param vn [m/s] GPS velocity in NORTH direction in earth-fixed NED frame
- * @param ve [m/s] GPS velocity in EAST direction in earth-fixed NED frame
- * @param vd [m/s] GPS velocity in DOWN direction in earth-fixed NED frame
+ * @param vn [m/s] GPS velocity in north direction in earth-fixed NED frame
+ * @param ve [m/s] GPS velocity in east direction in earth-fixed NED frame
+ * @param vd [m/s] GPS velocity in down direction in earth-fixed NED frame
  * @param speed_accuracy [m/s] GPS speed accuracy
  * @param horiz_accuracy [m] GPS horizontal accuracy
  * @param vert_accuracy [m] GPS vertical accuracy
  * @param satellites_visible  Number of satellites visible.
- * @param yaw [cdeg] Yaw of vehicle, zero means not available, use 36000 for north
+ * @param yaw [cdeg] Yaw of vehicle relative to Earth's North, zero means not available, use 36000 for north
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_gps_input_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -188,14 +188,14 @@ static inline uint16_t mavlink_msg_gps_input_pack(uint8_t system_id, uint8_t com
  * @param alt [m] Altitude (MSL). Positive for up.
  * @param hdop [m] GPS HDOP horizontal dilution of position
  * @param vdop [m] GPS VDOP vertical dilution of position
- * @param vn [m/s] GPS velocity in NORTH direction in earth-fixed NED frame
- * @param ve [m/s] GPS velocity in EAST direction in earth-fixed NED frame
- * @param vd [m/s] GPS velocity in DOWN direction in earth-fixed NED frame
+ * @param vn [m/s] GPS velocity in north direction in earth-fixed NED frame
+ * @param ve [m/s] GPS velocity in east direction in earth-fixed NED frame
+ * @param vd [m/s] GPS velocity in down direction in earth-fixed NED frame
  * @param speed_accuracy [m/s] GPS speed accuracy
  * @param horiz_accuracy [m] GPS horizontal accuracy
  * @param vert_accuracy [m] GPS vertical accuracy
  * @param satellites_visible  Number of satellites visible.
- * @param yaw [cdeg] Yaw of vehicle, zero means not available, use 36000 for north
+ * @param yaw [cdeg] Yaw of vehicle relative to Earth's North, zero means not available, use 36000 for north
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_gps_input_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -296,14 +296,14 @@ static inline uint16_t mavlink_msg_gps_input_encode_chan(uint8_t system_id, uint
  * @param alt [m] Altitude (MSL). Positive for up.
  * @param hdop [m] GPS HDOP horizontal dilution of position
  * @param vdop [m] GPS VDOP vertical dilution of position
- * @param vn [m/s] GPS velocity in NORTH direction in earth-fixed NED frame
- * @param ve [m/s] GPS velocity in EAST direction in earth-fixed NED frame
- * @param vd [m/s] GPS velocity in DOWN direction in earth-fixed NED frame
+ * @param vn [m/s] GPS velocity in north direction in earth-fixed NED frame
+ * @param ve [m/s] GPS velocity in east direction in earth-fixed NED frame
+ * @param vd [m/s] GPS velocity in down direction in earth-fixed NED frame
  * @param speed_accuracy [m/s] GPS speed accuracy
  * @param horiz_accuracy [m] GPS horizontal accuracy
  * @param vert_accuracy [m] GPS vertical accuracy
  * @param satellites_visible  Number of satellites visible.
- * @param yaw [cdeg] Yaw of vehicle, zero means not available, use 36000 for north
+ * @param yaw [cdeg] Yaw of vehicle relative to Earth's North, zero means not available, use 36000 for north
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -550,7 +550,7 @@ static inline float mavlink_msg_gps_input_get_vdop(const mavlink_message_t* msg)
 /**
  * @brief Get field vn from gps_input message
  *
- * @return [m/s] GPS velocity in NORTH direction in earth-fixed NED frame
+ * @return [m/s] GPS velocity in north direction in earth-fixed NED frame
  */
 static inline float mavlink_msg_gps_input_get_vn(const mavlink_message_t* msg)
 {
@@ -560,7 +560,7 @@ static inline float mavlink_msg_gps_input_get_vn(const mavlink_message_t* msg)
 /**
  * @brief Get field ve from gps_input message
  *
- * @return [m/s] GPS velocity in EAST direction in earth-fixed NED frame
+ * @return [m/s] GPS velocity in east direction in earth-fixed NED frame
  */
 static inline float mavlink_msg_gps_input_get_ve(const mavlink_message_t* msg)
 {
@@ -570,7 +570,7 @@ static inline float mavlink_msg_gps_input_get_ve(const mavlink_message_t* msg)
 /**
  * @brief Get field vd from gps_input message
  *
- * @return [m/s] GPS velocity in DOWN direction in earth-fixed NED frame
+ * @return [m/s] GPS velocity in down direction in earth-fixed NED frame
  */
 static inline float mavlink_msg_gps_input_get_vd(const mavlink_message_t* msg)
 {
@@ -620,7 +620,7 @@ static inline uint8_t mavlink_msg_gps_input_get_satellites_visible(const mavlink
 /**
  * @brief Get field yaw from gps_input message
  *
- * @return [cdeg] Yaw of vehicle, zero means not available, use 36000 for north
+ * @return [cdeg] Yaw of vehicle relative to Earth's North, zero means not available, use 36000 for north
  */
 static inline uint16_t mavlink_msg_gps_input_get_yaw(const mavlink_message_t* msg)
 {

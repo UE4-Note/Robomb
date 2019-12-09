@@ -30,14 +30,14 @@ struct GPS_INPUT : mavlink::Message {
     float alt; /*< [m] Altitude (MSL). Positive for up. */
     float hdop; /*< [m] GPS HDOP horizontal dilution of position */
     float vdop; /*< [m] GPS VDOP vertical dilution of position */
-    float vn; /*< [m/s] GPS velocity in NORTH direction in earth-fixed NED frame */
-    float ve; /*< [m/s] GPS velocity in EAST direction in earth-fixed NED frame */
-    float vd; /*< [m/s] GPS velocity in DOWN direction in earth-fixed NED frame */
+    float vn; /*< [m/s] GPS velocity in north direction in earth-fixed NED frame */
+    float ve; /*< [m/s] GPS velocity in east direction in earth-fixed NED frame */
+    float vd; /*< [m/s] GPS velocity in down direction in earth-fixed NED frame */
     float speed_accuracy; /*< [m/s] GPS speed accuracy */
     float horiz_accuracy; /*< [m] GPS horizontal accuracy */
     float vert_accuracy; /*< [m] GPS vertical accuracy */
     uint8_t satellites_visible; /*<  Number of satellites visible. */
-    uint16_t yaw; /*< [cdeg] Yaw of vehicle, zero means not available, use 36000 for north */
+    uint16_t yaw; /*< [cdeg] Yaw of vehicle relative to Earth's North, zero means not available, use 36000 for north */
 
 
     inline std::string get_name(void) const override

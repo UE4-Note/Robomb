@@ -9,7 +9,7 @@ namespace msg {
 /**
  * @brief BATTERY_STATUS message
  *
- * Battery information
+ * Battery information. Updates GCS with flight controller battery status. Use SMART_BATTERY_* messages instead for smart batteries.
  */
 struct BATTERY_STATUS : mavlink::Message {
     static constexpr msgid_t MSG_ID = 147;

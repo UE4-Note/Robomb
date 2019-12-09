@@ -28,9 +28,9 @@ struct HIL_GPS : mavlink::Message {
     uint16_t eph; /*< [cm] GPS HDOP horizontal dilution of position. If unknown, set to: 65535 */
     uint16_t epv; /*< [cm] GPS VDOP vertical dilution of position. If unknown, set to: 65535 */
     uint16_t vel; /*< [cm/s] GPS ground speed. If unknown, set to: 65535 */
-    int16_t vn; /*< [cm/s] GPS velocity in NORTH direction in earth-fixed NED frame */
-    int16_t ve; /*< [cm/s] GPS velocity in EAST direction in earth-fixed NED frame */
-    int16_t vd; /*< [cm/s] GPS velocity in DOWN direction in earth-fixed NED frame */
+    int16_t vn; /*< [cm/s] GPS velocity in north direction in earth-fixed NED frame */
+    int16_t ve; /*< [cm/s] GPS velocity in east direction in earth-fixed NED frame */
+    int16_t vd; /*< [cm/s] GPS velocity in down direction in earth-fixed NED frame */
     uint16_t cog; /*< [cdeg] Course over ground (NOT heading, but direction of movement), 0.0..359.99 degrees. If unknown, set to: 65535 */
     uint8_t satellites_visible; /*<  Number of satellites visible. If unknown, set to 255 */
 

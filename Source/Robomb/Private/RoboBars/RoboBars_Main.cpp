@@ -1,6 +1,5 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
 #include "RoboBars_Main.h"
 
 
@@ -38,6 +37,11 @@ void ARoboBars_Main::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 }
 
+
+void ARoboBars_Main::GetRCData()
+{
+	// mavlink_rc_channels_t rc;
+}
 
 void ARoboBars_Main::Init()
 {
@@ -83,4 +87,3 @@ void ARoboBars_Main::UpdataRCData()
 		break;
 	}
 }
-
