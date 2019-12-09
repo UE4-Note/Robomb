@@ -4,8 +4,17 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
-// #include "mavlink/mavlink_types.h"
 #include "RoboBars_Main.generated.h"
+
+
+UENUM()
+// 判断美手还是日手
+enum ModeOperation
+{
+	NoneModeOoperation, // 没有操作模式
+	AmericaModeOoperation, // 美国操作模式
+	JapanModeOoperation, // 日本操作模式
+};
 
 UCLASS()
 class ROBOMB_API ARoboBars_Main : public APawn
@@ -15,6 +24,7 @@ class ROBOMB_API ARoboBars_Main : public APawn
 public:
 	// Sets default values for this pawn's properties
 	ARoboBars_Main();
+	~ARoboBars_Main();
 
 protected:
 	// Called when the game starts or when spawned
@@ -29,15 +39,31 @@ public:
 
 public:
 
-	bool AmericaMode, JapanMode;
+	// RC 控杆的值
+	UPROPERTY(BlueprintReadOnly)
+		float RollAilerons;
+	UPROPERTY(BlueprintReadOnly)
+		float PitchElevator;
+	UPROPERTY(BlueprintReadOnly)
+		float Throttle;
+	UPROPERTY(BlueprintReadOnly)
+		float YawRudder;
+	UPROPERTY(BlueprintReadOnly)
+		float Chan5;
+	UPROPERTY(BlueprintReadOnly)
+		float Chan6;
+	UPROPERTY(BlueprintReadOnly)
+		float Chan7;
+	UPROPERTY(BlueprintReadOnly)
+		float Chan8;
+
+	// 操作模式
+	ModeOperation ModeOpera;
 
 private:
 
-	// mavlink_message_t Message;
+	void Init();
 
-public:
-
-	void RC_GetData();
-
+	void UpdataRCData();
 
 };

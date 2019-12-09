@@ -12,6 +12,11 @@ ARoboBars_Main::ARoboBars_Main()
 
 }
 
+ARoboBars_Main::~ARoboBars_Main()
+{
+
+}
+
 // Called when the game starts or when spawned
 void ARoboBars_Main::BeginPlay()
 {
@@ -33,15 +38,49 @@ void ARoboBars_Main::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 }
 
-void ARoboBars_Main::RC_GetData()
+
+void ARoboBars_Main::Init()
 {
-	/*	
-	if (Message.msgid == MAVLINK_MSG_ID_HEARTBEAT)
+	// Init
+	RollAilerons = PitchElevator = Throttle = YawRudder = Chan5 = Chan6 = Chan7 = Chan8 = 0;
+
+	// 操作模式默认是美国手
+	ModeOpera = ModeOperation::AmericaModeOoperation;
+}
+
+void ARoboBars_Main::UpdataRCData()
+{
+	switch (ModeOpera)
 	{
-		mavlink_message_t Msg;
-		mavlink_msg_request_data_stream_pack(Message.sysid, Message.compid, &Msg, Message.sysid, Message.compid, MAV_DATA_STREAM_ALL, 2, 10);
-		return;
+	case NoneModeOoperation:
+	case AmericaModeOoperation:
+		/*
+		RollAilerons = rc.chan1_raw;
+		Throttle = (rc.chan2_raw * -1) + 2998;
+		PitchElevator = (rc.chan3_raw * -1) + 2998;
+		YawRudder = rc.chan4_raw;
+		Chan5 = rc.chan5_raw;
+		Chan6 = rc.chan6_raw;
+		Chan7 = rc.chan7_raw;
+		Chan8 = rc.chan8_raw;
+		*/
+		//一般固定翼副翼接1通道，升降舵接2通道，油门3通道，方向舵4通道，起落架5通道，襟翼6通道。
+		break;
+	case JapanModeOoperation:
+		/*
+		RollAilerons = rc.chan1_raw;
+		PitchElevator = rc.chan2_raw;
+		Throttle = rc.chan3_raw;
+		YawRudder = rc.chan4_raw;
+		Chan5 = rc.chan5_raw;
+		Chan6 = rc.chan6_raw;
+		Chan7 = rc.chan7_raw;
+		Chan8 = rc.chan8_raw;
+		*/
+		break;
+	default:
+		UE_LOG(LogTemp, Log, TEXT("Error : Mode Ooperation Error !"));
+		break;
 	}
-	*/
 }
 
