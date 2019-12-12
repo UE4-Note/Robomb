@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
-#include "mavlink/mavlink_helpers.h"
 #include "RoboBars_Main.generated.h"
 
 UENUM()
