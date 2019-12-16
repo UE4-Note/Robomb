@@ -24,8 +24,9 @@ void SShowTimerVerticalBox::SpawnShowTimer()
 	{
 		ShowTimerVertical->AddSlot()
 			[
-				SNew(SShowTimer)
+				SAssignNew(ShowTiemr, SShowTimer)	
 			];
+		ShowTiemr->SetShowTimer(FText::FromString(TEXT("")));
 	}
 }
 
@@ -33,6 +34,7 @@ END_SLATE_FUNCTION_BUILD_OPTIMIZATION
 
 FReply SShowTimerVerticalBox::OnMouseButtonDown(const FGeometry& MyGeometry, const FPointerEvent& MouseEvent)
 {
+	// ShowTimerVertical
 	return FReply::Handled();
 }
 

@@ -21,6 +21,7 @@ public:
 private:
 
 	TSharedPtr<class SVerticalBox> ShowTimerVertical;
+	TSharedPtr<class SShowTimer> ShowTiemr;
 
 private:
 

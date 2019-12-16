@@ -3,8 +3,7 @@
 
 #include "SerialPort.h"
 
-/*
-SerialPort::SerialPort()
+ASerialPort::ASerialPort()
 {
 	memset(&m_OverlappedRead, 0, sizeof(OVERLAPPED));
 	memset(&m_OverlappedWrite, 0, sizeof(OVERLAPPED));
@@ -12,14 +11,12 @@ SerialPort::SerialPort()
 	m_bOpened = FALSE;
 }
 
-
-SerialPort::~SerialPort()
+ASerialPort::~ASerialPort()
 {
 	Close();
 }
 
-
-BOOL SerialPort::Open(int nPort, int nBaud)
+BOOL ASerialPort::Open(int nPort /*= 2*/, int nBaud /*= 9600*/)
 {
 	if (m_bOpened) return(TRUE);
 
@@ -65,70 +62,26 @@ BOOL SerialPort::Open(int nPort, int nBaud)
 		CloseHandle(m_hIDComDev);
 		return(FALSE);
 	}
+
 	m_bOpened = TRUE;
+
 	return(m_bOpened);
 }
 
-
-BOOL SerialPort::Close(void)
+BOOL ASerialPort::Close(void)
 {
 	if (!m_bOpened || m_hIDComDev == NULL) return(TRUE);
+
 	if (m_OverlappedRead.hEvent != NULL) CloseHandle(m_OverlappedRead.hEvent);
 	if (m_OverlappedWrite.hEvent != NULL) CloseHandle(m_OverlappedWrite.hEvent);
 	CloseHandle(m_hIDComDev);
 	m_bOpened = FALSE;
 	m_hIDComDev = NULL;
+
 	return(TRUE);
 }
 
-
-BOOL SerialPort::WriteCommByte(unsigned char ucByte)
-{
-	BOOL bWriteStat;
-	DWORD dwBytesWritten;
-
-	bWriteStat = WriteFile(m_hIDComDev, (LPSTR)&ucByte, 1, &dwBytesWritten, &m_OverlappedWrite);
-	if (!bWriteStat && (GetLastError() == ERROR_IO_PENDING)) {
-		if (WaitForSingleObject(m_OverlappedWrite.hEvent, 1000)) dwBytesWritten = 0;
-		else {
-			GetOverlappedResult(m_hIDComDev, &m_OverlappedWrite, &dwBytesWritten, FALSE);
-			m_OverlappedWrite.Offset += dwBytesWritten;
-		}
-	}
-	return(TRUE);
-}
-
-
-int SerialPort::SendData(const char *buffer, int size)
-{
-
-	if (!m_bOpened || m_hIDComDev == NULL) return(0);
-
-	DWORD dwBytesWritten = 0;
-	int i;
-	for (i = 0; i < size; i++) {
-		WriteCommByte(buffer[i]);
-		dwBytesWritten++;
-	}
-
-	return((int)dwBytesWritten);
-
-}
-
-
-int SerialPort::ReadDataWaiting(void)
-{
-	if (!m_bOpened || m_hIDComDev == NULL) return(0);
-
-	DWORD dwErrorFlags;
-	COMSTAT ComStat;
-
-	ClearCommError(m_hIDComDev, &dwErrorFlags, &ComStat);
-	return((int)ComStat.cbInQue);
-}
-
-
-int SerialPort::ReadData(void *buffer, int limit)
+int ASerialPort::ReadData(void *buffer, int limit)
 {
 	if (!m_bOpened || m_hIDComDev == NULL) return(0);
 
@@ -150,6 +103,48 @@ int SerialPort::ReadData(void *buffer, int limit)
 		}
 		return(0);
 	}
+
 	return((int)dwBytesRead);
 }
-*/
+
+int ASerialPort::SendData(const char *buffer, int size)
+{
+	if (!m_bOpened || m_hIDComDev == NULL) return(0);
+
+	DWORD dwBytesWritten = 0;
+	int i;
+	for (i = 0; i < size; i++) {
+		WriteCommByte(buffer[i]);
+		dwBytesWritten++;
+	}
+
+	return((int)dwBytesWritten);
+}
+
+int ASerialPort::ReadDataWaiting(void)
+{
+	if (!m_bOpened || m_hIDComDev == NULL) return(0);
+
+	DWORD dwErrorFlags;
+	COMSTAT ComStat;
+
+	ClearCommError(m_hIDComDev, &dwErrorFlags, &ComStat);
+
+	return((int)ComStat.cbInQue);
+}
+
+BOOL ASerialPort::WriteCommByte(unsigned char ucByte)
+{
+	BOOL bWriteStat;
+	DWORD dwBytesWritten;
+
+	bWriteStat = WriteFile(m_hIDComDev, (LPSTR)&ucByte, 1, &dwBytesWritten, &m_OverlappedWrite);
+	if (!bWriteStat && (GetLastError() == ERROR_IO_PENDING)) {
+		if (WaitForSingleObject(m_OverlappedWrite.hEvent, 1000)) dwBytesWritten = 0;
+		else {
+			GetOverlappedResult(m_hIDComDev, &m_OverlappedWrite, &dwBytesWritten, FALSE);
+			m_OverlappedWrite.Offset += dwBytesWritten;
+		}
+	}
+	return(TRUE);
+}

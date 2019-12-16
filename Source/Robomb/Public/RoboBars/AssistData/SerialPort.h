@@ -1,7 +1,8 @@
 #pragma once
 
-
-/*
+#include "Windows.h"
+// 无人机协议头文件
+#include "mavlink/common/mavlink.h"
 
 #ifndef __Serial_Port_H__
 #define __Serial_Port_H__
@@ -16,31 +17,38 @@
 #define ASCII_XON       0x11
 #define ASCII_XOFF      0x13
 
-class SerialPort
+class ASerialPort
 {
 
-public:
+private:
 
-	SerialPort();
-	~SerialPort();
-
-public:
-
-	BOOL Open(int nPort = 2, int nBaud = 9600);
-	BOOL Close(void);
-	BOOL IsOpened(void) { return(m_bOpened); }
-	int ReadData(void *, int);
-	int SendData(const char *, int);
-	int ReadDataWaiting(void);
-
-protected:
-
-	BOOL WriteCommByte(unsigned char);
 	HANDLE m_hIDComDev;
 	OVERLAPPED m_OverlappedRead, m_OverlappedWrite;
 	BOOL m_bOpened;
 
+public:
+
+	ASerialPort();
+	~ASerialPort();
+
+public:
+
+	BOOL Open(int nPort = 2, int nBaud = 9600);
+
+	BOOL Close(void);
+
+	int ReadData(void *, int);
+
+	int SendData(const char *, int);
+
+	int ReadDataWaiting(void);
+
+	BOOL IsOpened(void) { return(m_bOpened); }
+
+private:
+
+	BOOL WriteCommByte(unsigned char);
+
 };
 
 #endif
-*/

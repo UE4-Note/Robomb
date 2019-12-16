@@ -1,0 +1,1 @@
+%~dp0jre\bin\javaw.exe -jar %~dp0mavlink.jar COM3
