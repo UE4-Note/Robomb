@@ -10,15 +10,6 @@
 
 class ASerialPort;
 
-UENUM()
-// 判断美手还是日手
-enum ModeOperation
-{
-	NoneModeOoperation, // 没有操作模式
-	AmericaModeOoperation, // 美国操作模式
-	JapanModeOoperation, // 日本操作模式
-};
-
 UCLASS()
 class ROBOMB_API ARoboBars_Main : public APawn
 {
@@ -40,11 +31,19 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+
+public:
+
+	// 协议
+	mavlink_message_t Message;
+
+	ASerialPort SerialPort;
+
+	FRunnableThread *Thread1;
+
 private:
 
-	// 操作模式
-	ModeOperation ModeOpera;
-
+	int CheckCompId;
 	// RC 控杆的值
 	// UPROPERTY(BlueprintReadOnly)
 	float RollAilerons;
@@ -63,22 +62,8 @@ private:
 	// UPROPERTY(BlueprintReadOnly)
 	float Chan8;
 
-private:
-
-	// 协议
-	mavlink_message_t Message;
-
-	mavlink_rc_channels_t rc;
-
-	ASerialPort SerialPort;
-
-	FRunnableThread *Thread1;
-
 public:
 
-	// 获取 RC 遥感数据
-	UFUNCTION(BlueprintCallable)
-	void SetModeOperation() {};
 	UFUNCTION(BlueprintCallable)
 	float GetRollAilerons() { return RollAilerons; };
 	UFUNCTION(BlueprintCallable)
@@ -98,8 +83,6 @@ public:
 
 public:
 
-	UFUNCTION(BlueprintCallable)
-	void OPEN_COM();
 	// 调用此方法测试多线程
 	UFUNCTION(BlueprintCallable)
 	void TestThread();
@@ -110,16 +93,14 @@ public:
 	UFUNCTION(BlueprintCallable)
 	bool Open(int Port, int BaudRate);
 
-
-
 private:
 
 	void Init();
 
 	void GetRCData();
 
-	bool ReadMessage(mavlink_message_t &Message);
+	bool ReadMessage(mavlink_message_t &InMessage);
 
-	int Write(mavlink_message_t &Message);
+	int Write(mavlink_message_t &InMessage);
 
 };
