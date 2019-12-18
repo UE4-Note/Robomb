@@ -5,6 +5,7 @@
 #include "Engine/Engine.h"
 #include "Paths.h"
 #include "Data/EnumData.h"
+#include "RobombGameInstance.h"
 
 
 // Sets default values
@@ -12,8 +13,6 @@ ARoboBars_Main::ARoboBars_Main()
 {
  	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-	// OPEN_COM();
-	Open(3, 115200);
 }
 
 ARoboBars_Main::~ARoboBars_Main()
@@ -28,7 +27,7 @@ void ARoboBars_Main::BeginPlay()
 
 	Init();
 
-	Open(3, 115200);
+	// GameInstance = Cast<URobombGameInstance>(GetGameInstance()) ;
 }
 
 // Called every frame
@@ -46,49 +45,6 @@ void ARoboBars_Main::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 }
 
-void ARoboBars_Main::TestThread()
-{
-	if (FPlatformProcess::SupportsMultithreading())
-	{
-		// RcData = new FSaleTicket(this);
-		// Thread1 = FRunnableThread::Create(RcData, TEXT("线程自定义"));
-	}
-}
-
-void ARoboBars_Main::ShutDown()
-{
-	Close();
-// 	if (RcData)
-// 	{
-// 		RcData->Stop();
-// 	}
-// 
-	if (Thread1)
-	{
-		Thread1->Suspend(true);
-		Thread1->Kill(false);
-		delete Thread1;
-		Thread1 = nullptr;
-	}
-}
-
-void ARoboBars_Main::Close()
-{
-	SerialPort.Close();
-}
-
-bool ARoboBars_Main::Open(int Port, int BaudRate)
-{
-	if (!SerialPort.Open(Port, BaudRate))
-	{
-		return false;
-	}
-	else 
-	{
-		return true;
-	}
-}
-
 void ARoboBars_Main::Init()
 {
 	// Init
@@ -104,7 +60,9 @@ void ARoboBars_Main::Init()
 
 void ARoboBars_Main::GetRCData()
 {
+	mavlink_message_t Message;
 	ReadMessage(Message);
+	// Message = GameInstance->GetMessage();
 
 	if (Message.msgid == MAVLINK_MSG_ID_HEARTBEAT) {
 		mavlink_message_t Msg;
@@ -149,9 +107,8 @@ void ARoboBars_Main::GetRCData()
 	}
 	else
 	{
-		// check(false);
+		check(false);
 	}
-	CheckCompId = Message.compid;
 }
 
 bool ARoboBars_Main::ReadMessage(mavlink_message_t &InMessage)
@@ -170,6 +127,7 @@ bool ARoboBars_Main::ReadMessage(mavlink_message_t &InMessage)
 int ARoboBars_Main::Write(mavlink_message_t &InMessage)
 {
 	char Buf[300];//256
+
 	//将消息转换为缓冲区
 	unsigned Len = mavlink_msg_to_send_buffer((uint8_t*)Buf, &InMessage);
 

@@ -34,64 +34,51 @@ public:
 
 public:
 
-	// 协议
-	mavlink_message_t Message;
-
-	ASerialPort SerialPort;
+	Serial_Port SerialPort;
 
 	FRunnableThread *Thread1;
 
 private:
 
-	int CheckCompId;
+	// URobombGameInstance* GameInstance;
+
+private:
 	// RC 控杆的值
-	// UPROPERTY(BlueprintReadOnly)
 	float RollAilerons;
-	// UPROPERTY(BlueprintReadOnly)
 	float PitchElevator;
-	// UPROPERTY(BlueprintReadOnly)
 	float Throttle;
-	// UPROPERTY(BlueprintReadOnly)
 	float YawRudder;
-	// UPROPERTY(BlueprintReadOnly)
 	float Chan5;
-	// UPROPERTY(BlueprintReadOnly)
 	float Chan6;
-	// UPROPERTY(BlueprintReadOnly)
 	float Chan7;
-	// UPROPERTY(BlueprintReadOnly)
 	float Chan8;
 
 public:
 
+	// 获取 RC 控干值函数
 	UFUNCTION(BlueprintCallable)
 	float GetRollAilerons() { return RollAilerons; };
+
 	UFUNCTION(BlueprintCallable)
 	float GetPitchElevator() { return PitchElevator; };
+
 	UFUNCTION(BlueprintCallable)
 	float GetThrottle() { return Throttle; };
+
 	UFUNCTION(BlueprintCallable)
 	float GetYawRudder() { return YawRudder; };
+
 	UFUNCTION(BlueprintCallable)
 	float GetChan5() { return Chan5; };
+
 	UFUNCTION(BlueprintCallable)
 	float GetChan6() { return Chan6; };
+
 	UFUNCTION(BlueprintCallable)
 	float GetChan7() { return Chan7; };
+
 	UFUNCTION(BlueprintCallable)
 	float GetChan8() { return Chan8; };
-
-public:
-
-	// 调用此方法测试多线程
-	UFUNCTION(BlueprintCallable)
-	void TestThread();
-	UFUNCTION(BlueprintCallable)
-	void ShutDown();
-	UFUNCTION(BlueprintCallable)
-	void Close();
-	UFUNCTION(BlueprintCallable)
-	bool Open(int Port, int BaudRate);
 
 private:
 
