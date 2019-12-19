@@ -4,7 +4,7 @@
 #include "SShowTimerVerticalBox.h"
 #include "SlateOptMacros.h"
 #include "SBoxPanel.h"
-#include "WidgetSlateBase/TimerSelect/SShowTimer.h"
+#include "SShowTimer.h"
 
 BEGIN_SLATE_FUNCTION_BUILD_OPTIMIZATION
 void SShowTimerVerticalBox::Construct(const FArguments& InArgs)

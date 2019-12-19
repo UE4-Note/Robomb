@@ -3,9 +3,9 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "SlateTick.h"
 #include "SerialPort.h" // 协议编译出错  SerialPort.h 未解决错误编辑
 #include "Data/EnumData.h"
+#include "Thread/SlateTick.h"
 #include "Engine/GameInstance.h"
 #include "mavlink/mavlink_helpers.h"
 #include "RobombGameInstance.generated.h"
@@ -21,34 +21,27 @@ class ROBOMB_API URobombGameInstance : public UGameInstance
 public:
 
 	URobombGameInstance();
+	~URobombGameInstance();
 
 	virtual void Init() override;
 
-public:
+private:
 
-	UPROPERTY(BlueprintReadOnly)
-		float RollAilerons;
+	float RollAilerons;
 
-	UPROPERTY(BlueprintReadOnly)
-		float PitchElevator;
+	float PitchElevator;
 
-	UPROPERTY(BlueprintReadOnly)
-		float Throttle;
+	float Throttle;
 
-	UPROPERTY(BlueprintReadOnly)
-		float YawRudder;
+	float YawRudder;
 
-	UPROPERTY(BlueprintReadOnly)
-		int Chan5;
+	int Chan5;
 
-	UPROPERTY(BlueprintReadOnly)
-		float Chan6;
+	float Chan6;
 
-	UPROPERTY(BlueprintReadOnly)
-		int Chan7;
+	int Chan7;
 
-	UPROPERTY(BlueprintReadOnly)
-		float Chan8;
+	float Chan8;
 
 private:
 
@@ -66,6 +59,31 @@ private:
 	// 协议
 	mavlink_message_t Message;
 
+public:
+
+	UFUNCTION(BlueprintCallable)
+	float GetRollAilerons() { return RollAilerons; };
+
+	UFUNCTION(BlueprintCallable)
+	float GetPitchElevator() { return PitchElevator; };
+
+	UFUNCTION(BlueprintCallable)
+	float GetThrottle() { return Throttle; };
+
+	UFUNCTION(BlueprintCallable)
+	float GetYawRudder() { return YawRudder; };
+
+	UFUNCTION(BlueprintCallable)
+	int GetChan5() { return Chan5; };
+
+	UFUNCTION(BlueprintCallable)
+	float GetChan6() { return Chan6; };
+
+	UFUNCTION(BlueprintCallable)
+	int GetChan7() { return Chan7; };
+
+	UFUNCTION(BlueprintCallable)
+	float GetChan8() { return Chan8; };
 
 public:
 
@@ -92,6 +110,7 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "GetComputerConfig")
 		void GetOSVersions(FString &OSLabel, FString &OSVersion);
 
+	UFUNCTION(BlueprintCallable, Category = "GetRcData")
 	void GetRcData();
 
 private:

@@ -3,34 +3,35 @@
 
 #include "RobombGameInstance.h"
 #include "RunnableThread.h"
-#include "Kismet/KismetSystemLibrary.h"
-#include "Windows.h"
 #include "Engine/Engine.h"
-#include "RunnableThread.h"
-#include "IPTypes.h"
-#include "IPHlpApi.h"
-#include "SlateTick.h"
+
 
 URobombGameInstance::URobombGameInstance()
 	: RcData(nullptr)
 	, Thread1(nullptr)
 {
+
+}
+
+URobombGameInstance::~URobombGameInstance()
+{
+	ShutDown();
 }
 
 void URobombGameInstance::Init()
 {
 	OPEN_COM();
-	// TestThread();
-	Open(0, 115200);
-	Open(1, 115200);
-	Open(2, 115200);
+ 	TestThread();
+// 	Open(0, 115200);
+// 	Open(1, 115200);
+// 	Open(2, 115200);
 	Open(3, 115200);
-	Open(4, 115200);
-	Open(5, 115200);
-	Open(6, 115200);
-	Open(7, 115200);
-	Open(8, 115200);
-	Open(9, 115200);
+// 	Open(4, 115200);
+// 	Open(5, 115200);
+// 	Open(6, 115200);
+// 	Open(7, 115200);
+// 	Open(8, 115200);
+// 	Open(9, 115200);
 }
 
 void URobombGameInstance::OPEN_COM()
@@ -56,6 +57,23 @@ bool URobombGameInstance::Open(int Port, int BaudRate) {
 	}
 }
 
+void URobombGameInstance::ShutDown()
+{
+	Close();
+	if (RcData)
+	{
+		RcData->Stop();
+	}
+
+	if (Thread1)
+	{
+		Thread1->Suspend(true);
+		Thread1->Kill(false);
+		delete Thread1;
+		Thread1 = nullptr;
+	}
+}
+
 void URobombGameInstance::GetRcData()
 {
 	ReadMessage(Message);
@@ -70,6 +88,18 @@ void URobombGameInstance::GetRcData()
 	{
 		mavlink_rc_channels_t rc;
 		mavlink_msg_rc_channels_decode(&Message, &rc);
+		if (rc.chan1_raw == 0)
+		{
+			return;
+		}
+		if (rc.chan7_raw == 0)
+		{
+			return;
+		}
+		if (rc.chan5_raw == 0)
+		{
+			return;
+		}
 		ModeOperation Operation = ModeOperation::NoneModeOoperation;
 		switch (Operation)
 		{
@@ -96,33 +126,12 @@ void URobombGameInstance::GetRcData()
 			Chan8 = rc.chan8_raw;
 			break;
 		default:
-			UE_LOG(LogTemp, Log, TEXT("Error : Mode Ooperation Error !"));
+			check(0);
 			break;
 		}
 	}
-	else
-	{
-		// check(false);
-	}
 
 	CheckCompID = Message.compid;
-}
-
-void URobombGameInstance::ShutDown()
-{
-	Close();
-	if (RcData)
-	{
-		RcData->Stop();
-	}
-
-	if (Thread1)
-	{
-		Thread1->Suspend(true);
-		Thread1->Kill(false);
-		delete Thread1;
-		Thread1 = nullptr;
-	}
 }
 
 bool URobombGameInstance::ReadMessage(mavlink_message_t &InMessage) 
@@ -137,6 +146,7 @@ bool URobombGameInstance::ReadMessage(mavlink_message_t &InMessage)
 	}
 	return MsgReceived;
 }
+
 int URobombGameInstance::Write(mavlink_message_t &InMessage) 
 {
 	char buf[300];//256
