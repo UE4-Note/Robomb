@@ -45,9 +45,10 @@ void ARoboBars_Main::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 }
 
+///////////////////====================================== Tom =========================================//////////////////////////////
+
 void ARoboBars_Main::Init()
 {
-	// Init
 	Chan5 = 0;
 	Chan6 = 0;
 	Chan7 = 0;
@@ -62,7 +63,6 @@ void ARoboBars_Main::GetRCData()
 {
 	mavlink_message_t Message;
 	ReadMessage(Message);
-	// Message = GameInstance->GetMessage();
 
 	if (Message.msgid == MAVLINK_MSG_ID_HEARTBEAT) {
 		mavlink_message_t Msg;
@@ -72,9 +72,9 @@ void ARoboBars_Main::GetRCData()
 	}
 	else if (Message.msgid == MAVLINK_MSG_ID_RC_CHANNELS)
 	{
-
 		mavlink_rc_channels_t rc;
 		mavlink_msg_rc_channels_decode(&Message, &rc);
+		// 获取 GameInstance 中的 ModeOperation
 		ModeOperation Operation = ModeOperation::NoneModeOoperation;
 		switch (Operation)
 		{

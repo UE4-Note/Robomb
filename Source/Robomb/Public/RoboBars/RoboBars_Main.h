@@ -32,9 +32,13 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 
+
+	
+	///////////////////====================================== Tom =========================================//////////////////////////////
+
 public:
 
-	Serial_Port SerialPort;
+	FSerialPort SerialPort;
 
 	FRunnableThread *Thread1;
 
@@ -43,14 +47,21 @@ private:
 	// URobombGameInstance* GameInstance;
 
 private:
-	// RC 控杆的值
+	// RC 控制器的值
 	float RollAilerons;
+
 	float PitchElevator;
+
 	float Throttle;
+
 	float YawRudder;
+
 	float Chan5;
+
 	float Chan6;
+
 	float Chan7;
+
 	float Chan8;
 
 public:

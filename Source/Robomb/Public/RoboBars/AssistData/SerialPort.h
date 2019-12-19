@@ -17,12 +17,12 @@
 #define ASCII_XON       0x11
 #define ASCII_XOFF      0x13
 
-class Serial_Port
+class FSerialPort
 {
 
 public:
-	Serial_Port();
-	~Serial_Port();
+	FSerialPort();
+	~FSerialPort();
 
 	BOOL Open(int nPort = 2, int nBaud = 9600);
 	BOOL Close(void);

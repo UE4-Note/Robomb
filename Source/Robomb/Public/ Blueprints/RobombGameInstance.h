@@ -3,11 +3,11 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "SlateTick.h"
 #include "SerialPort.h" // 协议编译出错  SerialPort.h 未解决错误编辑
 #include "Data/EnumData.h"
 #include "Engine/GameInstance.h"
 #include "mavlink/mavlink_helpers.h"
-#include "SlateTick.h"
 #include "RobombGameInstance.generated.h"
 
 /**
@@ -17,118 +17,56 @@ UCLASS()
 class ROBOMB_API URobombGameInstance : public UGameInstance
 {
 	GENERATED_BODY()
-public:
-	URobombGameInstance();
-	// 调用此方法测试多线程
-	UFUNCTION(BlueprintCallable)
-		void TestThread();
-	UPROPERTY(BlueprintReadOnly)
-		float RollAilerons;
-	UPROPERTY(BlueprintReadOnly)
-		float PitchElevator;
-	UPROPERTY(BlueprintReadOnly)
-		float Throttle;
-	UPROPERTY(BlueprintReadOnly)
-		float YawRudder;
-	UPROPERTY(BlueprintReadOnly)
-		int chan5;
-	UPROPERTY(BlueprintReadOnly)
-		float chan6;
-	UPROPERTY(BlueprintReadOnly)
-		int chan7;
-	UPROPERTY(BlueprintReadOnly)
-		float chan8;
-
-
-	UPROPERTY(BlueprintReadOnly)
-		int checkCompid;
-	UPROPERTY(BlueprintReadWrite)
-		bool select_HandModel = false;
-
-	bool IsModel1;
-	bool IsModel2;
-
-
-	UFUNCTION(BlueprintCallable)
-		void OPEN_COM();
-
-
-	void getrcdata();
-	UFUNCTION(BlueprintCallable)
-		void Shutdown();
-public:
-	//新起线程
-	class SlateTick * RcData;    //执行线程new
-	FRunnableThread *Thread1;   //执行线程1
-
-	mavlink_message_t message;
-	bool flag;
-	Serial_Port serial;
-	UFUNCTION(BlueprintCallable)
-		bool open(int port, int baudRate);
-	bool read_message(mavlink_message_t &inmessage);
-	int write(mavlink_message_t &inmessage);
-	UFUNCTION(BlueprintCallable)
-		void close();
-
-	//获得机器码
-	UFUNCTION(BlueprintCallable, Category = "getHardwareID")
-		FString getHardwareID();
-	UFUNCTION(BlueprintCallable, Category = "getHardwareID")
-		FString getMACID();
-	UFUNCTION(BlueprintCallable, Category = "getHardwareID")
-		FString GetSystemId();
-	//电脑信息
-	UFUNCTION(BlueprintCallable, Category = "getComputerConfig")
-		FString getosversion();
-	UFUNCTION(BlueprintCallable, Category = "getComputerConfig")
-		FString getCPUB();
-	UFUNCTION(BlueprintCallable, Category = "getComputerConfig")
-		FString getGPUB();
-	UFUNCTION(BlueprintCallable, Category = "getComputerConfig")
-		void getOSV(FString &OSLabel, FString &OSVersion);
-
-
-
-
-/*
-private:
-
-	// 协议
-	mavlink_message_t Message;
-
-	ASerialPort SerialPort;
-
-	FRunnableThread *Threadl;
-
-private:
-
-	// RC 控制方式
-	ModeOperation ModeOpera;
-
-	// != 4 没有连接设备
-	int32 CheckCompid;
 
 public:
 
 	URobombGameInstance();
-
-	~URobombGameInstance();
 
 	virtual void Init() override;
 
 public:
 
-	mavlink_message_t GetMessage() { return Message; };
+	UPROPERTY(BlueprintReadOnly)
+		float RollAilerons;
+
+	UPROPERTY(BlueprintReadOnly)
+		float PitchElevator;
+
+	UPROPERTY(BlueprintReadOnly)
+		float Throttle;
+
+	UPROPERTY(BlueprintReadOnly)
+		float YawRudder;
+
+	UPROPERTY(BlueprintReadOnly)
+		int Chan5;
+
+	UPROPERTY(BlueprintReadOnly)
+		float Chan6;
+
+	UPROPERTY(BlueprintReadOnly)
+		int Chan7;
+
+	UPROPERTY(BlueprintReadOnly)
+		float Chan8;
+
+private:
+
+	// 是否成功连接
+	int CheckCompID;
+
+	// 线程
+	class SlateTick * RcData;    // New 线程
+
+	FRunnableThread *Thread1;   // 执行线程
+
+	// 一个 FSerialPort 类
+	FSerialPort Serial;
+
+	// 协议
+	mavlink_message_t Message;
 
 public:
-
-	// 获取 RC 遥感数据
-	UFUNCTION(BlueprintCallable)
-		void SetModeOperation(ModeOperation InModeOpera) { ModeOpera = InModeOpera; };
-
-	UFUNCTION(BlueprintCallable)
-		ModeOperation GetModeOperation() { return ModeOpera; };
 
 	//获得机器码
 	UFUNCTION(BlueprintCallable, Category = "GetHardwareID")
@@ -153,26 +91,30 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "GetComputerConfig")
 		void GetOSVersions(FString &OSLabel, FString &OSVersion);
 
+	void GetRcData();
+
 private:
 
+	// 运行 JAVA 开发的环境
 	void OPEN_COM();
 
-	// 调用此方法测试多线程
+	// 线程在这里运行 GetRcData
 	void TestThread();
 
+	// 不太清楚这是什么
 	bool Open(int Port, int BaudRate);
 
-	// ShutDown 里调用
-	void Close();
-
-	// 没有任何地方调用
+	// 该事件没有地方使用
 	void ShutDown();
 
-	void bConnectingDevice();
+	// 在 ShutDown 里使用
+	void Close();
 
+	// GetRcData 里使用
 	bool ReadMessage(mavlink_message_t &InMessage);
 
-	void InitData();
-*/
-	
+	// GetRcData 里使用
+	int Write(mavlink_message_t &InMessage);
+
+
 };

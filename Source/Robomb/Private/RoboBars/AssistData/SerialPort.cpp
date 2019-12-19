@@ -3,7 +3,7 @@
 
 #include "SerialPort.h"
 
-Serial_Port::Serial_Port()
+FSerialPort::FSerialPort()
 {
 
 	memset(&m_OverlappedRead, 0, sizeof(OVERLAPPED));
@@ -13,14 +13,14 @@ Serial_Port::Serial_Port()
 
 }
 
-Serial_Port::~Serial_Port()
+FSerialPort::~FSerialPort()
 {
 
 	Close();
 
 }
 
-BOOL Serial_Port::Open(int nPort, int nBaud)
+BOOL FSerialPort::Open(int nPort, int nBaud)
 {
 
 	if (m_bOpened) return(TRUE);
@@ -74,7 +74,7 @@ BOOL Serial_Port::Open(int nPort, int nBaud)
 
 }
 
-BOOL Serial_Port::Close(void)
+BOOL FSerialPort::Close(void)
 {
 
 	if (!m_bOpened || m_hIDComDev == NULL) return(TRUE);
@@ -89,7 +89,7 @@ BOOL Serial_Port::Close(void)
 
 }
 
-BOOL Serial_Port::WriteCommByte(unsigned char ucByte)
+BOOL FSerialPort::WriteCommByte(unsigned char ucByte)
 {
 	BOOL bWriteStat;
 	DWORD dwBytesWritten;
@@ -109,7 +109,7 @@ BOOL Serial_Port::WriteCommByte(unsigned char ucByte)
 
 
 
-int Serial_Port::SendData(const char *buffer, int size)
+int FSerialPort::SendData(const char *buffer, int size)
 {
 
 	if (!m_bOpened || m_hIDComDev == NULL) return(0);
@@ -125,7 +125,7 @@ int Serial_Port::SendData(const char *buffer, int size)
 
 }
 
-int Serial_Port::ReadDataWaiting(void)
+int FSerialPort::ReadDataWaiting(void)
 {
 
 	if (!m_bOpened || m_hIDComDev == NULL) return(0);
@@ -139,7 +139,7 @@ int Serial_Port::ReadDataWaiting(void)
 
 }
 
-int Serial_Port::ReadData(void *buffer, int limit)
+int FSerialPort::ReadData(void *buffer, int limit)
 {
 
 	if (!m_bOpened || m_hIDComDev == NULL) return(0);

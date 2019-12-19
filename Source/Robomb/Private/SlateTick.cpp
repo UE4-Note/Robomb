@@ -22,7 +22,7 @@ uint32 SlateTick::Run()
 	{
 		if (GameInstance)
 		{
-			GameInstance->getrcdata();
+			GameInstance->GetRcData();
 		}
 	}
 }
