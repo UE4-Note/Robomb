@@ -88,6 +88,7 @@ void URobombGameInstance::GetRcData()
 	{
 		mavlink_rc_channels_t rc;
 		mavlink_msg_rc_channels_decode(&Message, &rc);
+		/*========== 不能删不能删 =============*/
 		if (rc.chan1_raw == 0)
 		{
 			return;
@@ -100,6 +101,7 @@ void URobombGameInstance::GetRcData()
 		{
 			return;
 		}
+		/*========== 不能删不能删 =============*/
 		ModeOperation Operation = ModeOperation::NoneModeOoperation;
 		switch (Operation)
 		{
