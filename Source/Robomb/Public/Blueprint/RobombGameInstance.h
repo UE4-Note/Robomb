@@ -66,6 +66,7 @@ private:
 	// 协议
 	mavlink_message_t Message;
 
+
 public:
 
 	//获得机器码
@@ -115,6 +116,4 @@ private:
 
 	// GetRcData 里使用
 	int Write(mavlink_message_t &InMessage);
-
-
 };

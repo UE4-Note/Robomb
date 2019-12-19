@@ -21,10 +21,6 @@ void URobombGameInstance::Init()
 {
 	OPEN_COM();
 	// TestThread();
-	while (true)
-	{
-		GetRcData();
-	}
 	Open(0, 115200);
 	Open(1, 115200);
 	Open(2, 115200);
@@ -106,7 +102,7 @@ void URobombGameInstance::GetRcData()
 	}
 	else
 	{
-		check(false);
+		// check(false);
 	}
 
 	CheckCompID = Message.compid;
@@ -129,7 +125,8 @@ void URobombGameInstance::ShutDown()
 	}
 }
 
-bool URobombGameInstance::ReadMessage(mavlink_message_t &InMessage) {
+bool URobombGameInstance::ReadMessage(mavlink_message_t &InMessage) 
+{
 	uint8_t          cp;
 	mavlink_status_t Status;
 	uint8_t          MsgReceived = false;
@@ -140,15 +137,18 @@ bool URobombGameInstance::ReadMessage(mavlink_message_t &InMessage) {
 	}
 	return MsgReceived;
 }
-int URobombGameInstance::Write(mavlink_message_t &InMessage) {
+int URobombGameInstance::Write(mavlink_message_t &InMessage) 
+{
 	char buf[300];//256
+
 	//将消息转换为缓冲区
 	unsigned len = mavlink_msg_to_send_buffer((uint8_t*)buf, &InMessage);
 
 	return Serial.SendData(buf, len);
 }
 
-void URobombGameInstance::Close() {
+void URobombGameInstance::Close() 
+{
 	Serial.Close();
 }
 
