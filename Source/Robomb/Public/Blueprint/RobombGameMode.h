@@ -13,5 +13,9 @@ UCLASS()
 class ROBOMB_API ARobombGameMode : public AGameMode
 {
 	GENERATED_BODY()
+
+public:
+
+	ARobombGameMode();
 	
 };

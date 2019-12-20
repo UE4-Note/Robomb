@@ -18,12 +18,22 @@ class ROBOMB_API URobombGameInstance : public UGameInstance
 {
 	GENERATED_BODY()
 
-public:
+private:
 
 	URobombGameInstance();
+
 	~URobombGameInstance();
 
 	virtual void Init() override;
+
+public:
+
+	// 单例 GameInstance
+	static const URobombGameInstance* Get() { return RobombGameInstance; };
+
+private:
+
+	static URobombGameInstance* RobombGameInstance;
 
 private:
 
@@ -45,13 +55,14 @@ private:
 
 private:
 
-	// 是否成功连接
+	// CompID
 	int CheckCompID;
 
-	// 线程
-	class SlateTick * RcData;    // New 线程
+	// 线程 // New 线程
+	class SlateTick * RcData;   
 
-	FRunnableThread *Thread1;   // 执行线程
+	// 执行线程
+	FRunnableThread *Thread1;   
 
 	// 一个 FSerialPort 类
 	FSerialPort Serial;
@@ -60,58 +71,61 @@ private:
 	mavlink_message_t Message;
 
 public:
+	// UFUNCTION(BlueprintCallable, Category = "GetRcData")
+	void GetRcData();
 
-	UFUNCTION(BlueprintCallable)
+	// UFUNCTION(BlueprintCallable)
 	float GetRollAilerons() { return RollAilerons; };
 
-	UFUNCTION(BlueprintCallable)
+	// UFUNCTION(BlueprintCallable)
 	float GetPitchElevator() { return PitchElevator; };
 
-	UFUNCTION(BlueprintCallable)
+	// UFUNCTION(BlueprintCallable)
 	float GetThrottle() { return Throttle; };
 
-	UFUNCTION(BlueprintCallable)
+	// UFUNCTION(BlueprintCallable)
 	float GetYawRudder() { return YawRudder; };
 
-	UFUNCTION(BlueprintCallable)
+	// UFUNCTION(BlueprintCallable)
 	int GetChan5() { return Chan5; };
 
-	UFUNCTION(BlueprintCallable)
+	// UFUNCTION(BlueprintCallable)
 	float GetChan6() { return Chan6; };
 
-	UFUNCTION(BlueprintCallable)
+	// UFUNCTION(BlueprintCallable)
 	int GetChan7() { return Chan7; };
 
-	UFUNCTION(BlueprintCallable)
+	// UFUNCTION(BlueprintCallable)
 	float GetChan8() { return Chan8; };
 
 public:
 
-	//获得机器码
-	UFUNCTION(BlueprintCallable, Category = "GetHardwareID")
-		FString GetMachineId();
+	void GameQuit();
 
-	UFUNCTION(BlueprintCallable, Category = "GetHardwareID")
-		FString GetMacAddressString();
+public:
 
-	UFUNCTION(BlueprintCallable, Category = "GetHardwareID")
-		FString GetOperatingSystemId();
+	// 获得机器码
+	// UFUNCTION(BlueprintCallable, Category = "GetHardwareID")
+	FString GetMachineId();
 
-	//电脑信息
-	UFUNCTION(BlueprintCallable, Category = "GetComputerConfig")
-		FString GetOSVersion();
+	// UFUNCTION(BlueprintCallable, Category = "GetHardwareID")
+	FString GetMacAddressString();
 
-	UFUNCTION(BlueprintCallable, Category = "GetComputerConfig")
-		FString GetCPUBrand();
+	// UFUNCTION(BlueprintCallable, Category = "GetHardwareID")
+	FString GetOperatingSystemId();
 
-	UFUNCTION(BlueprintCallable, Category = "GetComputerConfig")
-		FString GetPrimaryGPUBrand();
+	// 电脑信息
+	// UFUNCTION(BlueprintCallable, Category = "GetComputerConfig")
+	FString GetOSVersion();
 
-	UFUNCTION(BlueprintCallable, Category = "GetComputerConfig")
-		void GetOSVersions(FString &OSLabel, FString &OSVersion);
+	// UFUNCTION(BlueprintCallable, Category = "GetComputerConfig")
+	FString GetCPUBrand();
 
-	UFUNCTION(BlueprintCallable, Category = "GetRcData")
-	void GetRcData();
+	// UFUNCTION(BlueprintCallable, Category = "GetComputerConfig")
+	FString GetPrimaryGPUBrand();
+
+	// UFUNCTION(BlueprintCallable, Category = "GetComputerConfig")
+	void GetOSVersions(FString &OSLabel, FString &OSVersion);
 
 private:
 
@@ -135,4 +149,10 @@ private:
 
 	// GetRcData 里使用
 	int Write(mavlink_message_t &InMessage);
+
+private:
+
+	// 设备是否连接
+	void Equipment();
+
 };

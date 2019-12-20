@@ -2,15 +2,21 @@
 
 
 #include "RobombGameInstance.h"
-#include "RunnableThread.h"
+#include "Engine/World.h"
 #include "Engine/Engine.h"
+#include "RunnableThread.h"
+#include "Engine/GameInstance.h"
+#include "Kismet/GameplayStatics.h"
+#include "Kismet/KismetSystemLibrary.h"
+#include "GameFramework/PlayerController.h"
 
+URobombGameInstance* URobombGameInstance::RobombGameInstance = nullptr;
 
 URobombGameInstance::URobombGameInstance()
 	: RcData(nullptr)
 	, Thread1(nullptr)
 {
-
+	RobombGameInstance = this;
 }
 
 URobombGameInstance::~URobombGameInstance()
@@ -32,6 +38,7 @@ void URobombGameInstance::Init()
 // 	Open(7, 115200);
 // 	Open(8, 115200);
 // 	Open(9, 115200);
+	Equipment();
 }
 
 void URobombGameInstance::OPEN_COM()
@@ -72,6 +79,11 @@ void URobombGameInstance::ShutDown()
 		delete Thread1;
 		Thread1 = nullptr;
 	}
+}
+
+void URobombGameInstance::Close()
+{
+	Serial.Close();
 }
 
 void URobombGameInstance::GetRcData()
@@ -159,9 +171,27 @@ int URobombGameInstance::Write(mavlink_message_t &InMessage)
 	return Serial.SendData(buf, len);
 }
 
-void URobombGameInstance::Close() 
+void URobombGameInstance::Equipment()
 {
-	Serial.Close();
+	// 延迟 2m 退出
+	FPlatformProcess::Sleep(2.0);
+
+	// 判断是否连接到设备没有退出
+	if (CheckCompID == 4)
+	{
+		GEngine->AddOnScreenDebugMessage(1, 1000.0, FColor::Red, TEXT("Get Equipment"));
+		return;
+	}
+
+	FPlatformProcess::Sleep(2.0);
+	GEngine->AddOnScreenDebugMessage(1, 1000.0, FColor::Red, TEXT("GameQuit"));
+	GameQuit();
+}
+
+void URobombGameInstance::GameQuit()
+{
+// 	APlayerController* PlayerController = UGameplayStatics::GetPlayerController(this, 0);
+// 	UKismetSystemLibrary::QuitGame(this, PlayerController, EQuitPreference::Quit, true);
 }
 
 FString URobombGameInstance::GetMachineId()
@@ -178,6 +208,7 @@ FString URobombGameInstance::GetOperatingSystemId()
 {
 	return FPlatformMisc::GetOperatingSystemId();
 }
+
 //////电脑信息
 FString URobombGameInstance::GetOSVersion()
 {

@@ -28,4 +28,23 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+/*================ Tom 2019/12/20 ===================*/
+
+public:
+ 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly , Category = "Mesh")
+ 		class USkeletalMeshComponent* SKeletalMeshComp;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly , Category = "Mesh")
+		class UPostProcessComponent* PostProcessComp;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly , Category = "Mesh")
+		class USpringArmComponent* SpringArmComp;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly , Category = "Mesh")
+		class UCameraComponent* CameraComp;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly , Category = "Mesh")
+		class UWidgetComponent* WidgetComp;
+	
+private:
+
+	const class URobombGameInstance* GameInstace;
+
 };
