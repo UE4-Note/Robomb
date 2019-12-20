@@ -17,4 +17,13 @@ public:
 
 	/** Constructs this widget with InArgs */
 	void Construct(const FArguments& InArgs);
+
+private:
+	
+	TSharedPtr<class SVerticalBox> RobombMessage;
+		
+	TSharedPtr<class SVerticalBox> RCMessage;
+
+	TSharedPtr<class SVerticalBox> RestsMessage;
+
 };

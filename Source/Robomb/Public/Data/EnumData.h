@@ -13,3 +13,10 @@ enum ModeOperation
 	AmericaModeOoperation, // 美国操作模式
 	JapanModeOoperation, // 日本操作模式
 };
+
+enum RCPosition
+{
+	None,
+	CentrePosition,
+	EndPosition,
+};

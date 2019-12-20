@@ -29,11 +29,28 @@ private:
 public:
 
 	// 单例 GameInstance
-	static const URobombGameInstance* Get() { return RobombGameInstance; };
+	static URobombGameInstance* Get() { return RobombGameInstance; };
 
 private:
 
 	static URobombGameInstance* RobombGameInstance;
+
+private:
+
+	// CompID
+	int CheckCompID;
+
+	// 线程 // New 线程
+	class SlateTick * RcData;
+
+	// 执行线程
+	FRunnableThread *Thread1;
+
+	// 一个 FSerialPort 类
+	FSerialPort Serial;
+
+	// 协议
+	mavlink_message_t Message;
 
 private:
 
@@ -53,22 +70,9 @@ private:
 
 	float Chan8;
 
-private:
+	ModeOperation Operation;
 
-	// CompID
-	int CheckCompID;
-
-	// 线程 // New 线程
-	class SlateTick * RcData;   
-
-	// 执行线程
-	FRunnableThread *Thread1;   
-
-	// 一个 FSerialPort 类
-	FSerialPort Serial;
-
-	// 协议
-	mavlink_message_t Message;
+	RCPosition Position;
 
 public:
 	// UFUNCTION(BlueprintCallable, Category = "GetRcData")
@@ -97,6 +101,14 @@ public:
 
 	// UFUNCTION(BlueprintCallable)
 	float GetChan8() { return Chan8; };
+
+	ModeOperation GetOperation() { return Operation; };
+
+	void SetOperation(ModeOperation InOperation) { Operation = InOperation; };
+
+	RCPosition GetRCPosition() { return Position; };
+
+	void SetRCPosition(RCPosition InPosition) { Position = InPosition; };
 
 public:
 
@@ -154,5 +166,8 @@ private:
 
 	// 设备是否连接
 	void Equipment();
+
+	// 初始化数据
+	void InitData();
 
 };

@@ -39,6 +39,7 @@ void URobombGameInstance::Init()
 // 	Open(8, 115200);
 // 	Open(9, 115200);
 	Equipment();
+	InitData();
 }
 
 void URobombGameInstance::OPEN_COM()
@@ -114,7 +115,6 @@ void URobombGameInstance::GetRcData()
 			return;
 		}
 		/*========== 不能删不能删 =============*/
-		ModeOperation Operation = ModeOperation::NoneModeOoperation;
 		switch (Operation)
 		{
 		case NoneModeOoperation:
@@ -186,6 +186,13 @@ void URobombGameInstance::Equipment()
 	FPlatformProcess::Sleep(2.0);
 	GEngine->AddOnScreenDebugMessage(1, 1000.0, FColor::Red, TEXT("GameQuit"));
 	GameQuit();
+}
+
+void URobombGameInstance::InitData()
+{
+	Operation = ModeOperation::NoneModeOoperation;
+
+	Position = RCPosition::CentrePosition;
 }
 
 void URobombGameInstance::GameQuit()

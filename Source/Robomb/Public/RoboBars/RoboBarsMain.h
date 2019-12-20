@@ -30,21 +30,45 @@ public:
 
 /*================ Tom 2019/12/20 ===================*/
 
+private:
+
+	class URobombGameInstance* GameInstace;
+	
+	// 在中位或者尾位要用
+	float RcMessage;
+
+	float MyDeltaTime;
+
 public:
  
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly , Category = "Mesh")
  		class USkeletalMeshComponent* SKeletalMeshComp;
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly , Category = "Mesh")
 		class UPostProcessComponent* PostProcessComp;
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly , Category = "Mesh")
 		class USpringArmComponent* SpringArmComp;
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly , Category = "Mesh")
 		class UCameraComponent* CameraComp;
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly , Category = "Mesh")
 		class UWidgetComponent* WidgetComp;
-	
-private:
 
-	const class URobombGameInstance* GameInstace;
+private:// 自稳模式
 
+	// 注意 : X == Roll; Y == Pitch; Z == Yaw;
+
+	// 油门
+	void GoUpAndDown(float InThrottle, float InSensitivity = 1);
+
+	// 方向
+	void Rudder(float InYaw, float InSensitivity = 1);
+
+	// 副翼
+	void Aileron(float InRoll, float InSensitivity = 1);
+
+	// 升降
+	void Lifting(float InPitch, float InSensitivity = 1);
 };
